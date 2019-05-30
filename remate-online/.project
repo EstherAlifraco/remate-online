@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>proyecto-limpio-spring</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
+		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/img/Remates.gif</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/Remates.gif</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/footer/facebook.png</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/Footer/facebook.png</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/footer/instagram.png</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/Footer/instagram.png</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/footer/twitter.png</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/Footer/twitter.png</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/home/remates.jpg</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/home/remates1.jpg</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates1.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/home/remates2.jpg</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates2.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/home/remates3.jpg</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates3.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/home/remates4.jpg</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates4.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/img/home/remates5.png</name>
+			<type>1</type>
+			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates5.png</location>
+		</link>
+	</linkedResources>
+</projectDescription>
