@@ -31,9 +31,9 @@
         <a class="dropdown-toggle" style="color: white" data-toggle="dropdown" href="#">Remates
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="${url}/remate/judicial" style="color: #075C78">Judiciales</a></li>
-          <li><a href="${url}/remate/administrativo" style="color: #075C78">Administrativo</a></li>
-          <li><a href="${url}/remate/privado" style="color: #075C78">Privado</a></li>
+          <li><a href="${url}/remate/vehiculo" style="color: #075C78">Vehiculos</a></li>
+          <li><a href="${url}/remate/inmueble" style="color: #075C78">Inmueble</a></li>
+          <li><a href="${url}/remate/otro" style="color: #075C78">Otro</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -44,8 +44,7 @@
           <li><a href="#" style="color: #075C78">Preguntas Frecuentes</a></li>
           <li><a href="#" style="color: #075C78">Servicio Técnico</a></li>
           </ul>
-      <li><a href="#" style="color: white">Vender</a></li>
-    </ul>
+          </ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="${url}/registro"><span class="glyphicon glyphicon-user"
 							style="color: white"></span> Registrarse</a></li>

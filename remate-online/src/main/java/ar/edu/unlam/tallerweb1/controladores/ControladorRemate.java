@@ -28,23 +28,23 @@ public class ControladorRemate {
 	public ModelAndView remateNombre(@PathVariable String tipoRemate, @ModelAttribute Remate remate ) {
 		
 		switch (tipoRemate) {
-		case "judicial":
+		case "vehiculo":
 			ModelMap model= new ModelMap();
-			String judicial= remate.getNombre();
-			model.put("judicial", judicial);
-			return new ModelAndView("judicial", model);
+			String vehiculo= remate.getNombre();
+			model.put("vehiculo", vehiculo);
+			return new ModelAndView("vehiculo", model);
 			
-		case "administrativo":
+		case "inmueble":
 			ModelMap model1= new ModelMap();
-			String administrativo= remate.getNombre();
-			model1.put("administrativo", administrativo);
-			return new ModelAndView("administrativo", model1);
+			String inmueble= remate.getNombre();
+			model1.put("inmueble", inmueble);
+			return new ModelAndView("inmueble", model1);
 			
-		case "privado":
+		case "otro":
 			ModelMap model2= new ModelMap();
-			String privado= remate.getNombre();
-			model2.put("privado", privado);
-			return new ModelAndView("privado", model2);
+			String otro= remate.getNombre();
+			model2.put("otro", otro);
+			return new ModelAndView("otro", model2);
 		
 		}
 		return null;

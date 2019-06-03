@@ -8,8 +8,11 @@
 <t:nav-footer>
 	<jsp:attribute name="body">
 	    <br>
-	    <div class="titulo"><h1>ADMINISTRATIVOS</h1>
+	    <div class="titulo"><h1>OTRO</h1>
 	</div>
+	<br>
+	<br>
+	<br>
 
 
 	</jsp:attribute>
