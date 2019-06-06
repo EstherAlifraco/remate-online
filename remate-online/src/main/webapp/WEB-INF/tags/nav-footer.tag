@@ -24,7 +24,7 @@
 	<body>
          <nav class="navbar navbar-inverse">
 			 <div class="container-fluid" style="background-color: #075C78">
-			 <div align="center"><img width="30%" height="30%" src ="${url}/img/Remates.gif"/>
+			 <div align="center"><img width="30%" height="30%" src ="${url}/img/remates.gif"/>
 			  <ul class="nav navbar-nav navbar-left">
       <li class="active"><a href="${url}/" style="color: white">Home</a></li>
       <li class="dropdown">

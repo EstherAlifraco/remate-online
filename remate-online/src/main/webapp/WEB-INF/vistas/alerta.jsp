@@ -16,5 +16,8 @@
 		<h1>${aviso1}</h1>
 	</div>
 	     </div>
+	     <br>
+	     <br>
+	     <br>
 	</jsp:attribute>
 </t:nav-footer>

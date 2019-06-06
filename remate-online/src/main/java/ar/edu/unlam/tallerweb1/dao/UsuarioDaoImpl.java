@@ -36,7 +36,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		return (Usuario) session.createCriteria(Usuario.class)
 				.add(Restrictions.eq("email", email))
 				.add(Restrictions.eq("nombre", nombre))
-				.add(Restrictions.eq("pass", password))
+				.add(Restrictions.eq("password", password))
 				.uniqueResult();
 	}
 	

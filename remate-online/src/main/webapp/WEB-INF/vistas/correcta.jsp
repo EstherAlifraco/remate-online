@@ -13,6 +13,8 @@
 		<h1>${aviso}</h1>
 	</div>
 	</div>
-	
+	<br>
+	<br>
+	<br>
 	</jsp:attribute>
 </t:nav-footer>

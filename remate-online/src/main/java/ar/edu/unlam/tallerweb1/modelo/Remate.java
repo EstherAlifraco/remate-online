@@ -24,6 +24,7 @@ public class Remate {
 	   private Long id;
 	   @Column(name= "NOMBRE")
 	   private String nombre;
+	   
 	   @OneToMany(mappedBy="remate")
 	   @Cascade(CascadeType.ALL)
 	   private List<Subasta> subasta= new ArrayList <>();

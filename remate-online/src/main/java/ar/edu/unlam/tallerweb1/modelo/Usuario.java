@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name= "USUARIO")
 public class Usuario {
 
 	@Id
@@ -13,7 +15,7 @@ public class Usuario {
 	private Long id;
 	private String email;
 	private String password;
-	private String rol;
+	private String rol; //para cuando hagamos el rol admin.
 	private String nombre;
 	
 	public Long getId() {

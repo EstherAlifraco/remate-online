@@ -14,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 
+
 @Entity
 @Table(name= "SUBASTA")
 public class Subasta {
@@ -34,6 +35,7 @@ public class Subasta {
 	   
 	   @ManyToOne
 	   private Remate remate;
+	   
 
 	public Long getId() {
 		return id;
@@ -90,7 +92,7 @@ public class Subasta {
 	public void setRemate(Remate remate) {
 		this.remate = remate;
 	}
-	   
 
+	
 }
 
