@@ -10,6 +10,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
+import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 @Repository("subastaDao")
 public class SubastaDaoImpl implements SubastaDao{
@@ -38,5 +39,13 @@ public class SubastaDaoImpl implements SubastaDao{
 		return (sessionFactory.getCurrentSession().createCriteria(Subasta.class).list());
 
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Usuario> listaDeUsuariosDao(){
+		return (sessionFactory.getCurrentSession().createCriteria(Usuario.class)
+				.add(Restrictions.isNotNull("id")).list());
+		
+	}	
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.unlam.tallerweb1.dao.SubastaDao;
+import ar.edu.unlam.tallerweb1.dao.UsuarioDao;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 
 @Service("servicioSubasta")
@@ -16,6 +17,10 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 	
 	@Inject
 	private SubastaDao servicioSubastaDao;
+	
+	@SuppressWarnings("unused")
+	@Inject
+	private UsuarioDao servicioUsuarioDao;
 
 	@Override
 	public void guardarSubasta(Subasta subasta) {

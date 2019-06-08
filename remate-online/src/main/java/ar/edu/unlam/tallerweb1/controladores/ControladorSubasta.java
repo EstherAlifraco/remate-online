@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -8,24 +10,32 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unlam.tallerweb1.modelo.Remate;
-
+import ar.edu.unlam.tallerweb1.modelo.Subasta;
+import ar.edu.unlam.tallerweb1.servicios.ServicioSubasta;
+import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 
 @Controller
-public class ControladorRemate {
+public class ControladorSubasta {
 	
+	@SuppressWarnings("unused")
+	@Inject
+	private ServicioUsuario servicioUsuario;
+	
+	@SuppressWarnings("unused")
+	@Inject
+	private ServicioSubasta servicioSubasta;
 	
 	@RequestMapping("/remate")
 	public ModelAndView irARemate() {
 		ModelMap model = new ModelMap();
-		Remate remate = new Remate();
-		model.put("remate", remate);
+		Subasta subasta = new Subasta();
+		model.put("remate", subasta);
 		return new ModelAndView("remate", model);
 	}
 	
 	
 	@RequestMapping (path="remate/{tipoRemate}")
-	public ModelAndView remateNombre(@PathVariable String tipoRemate, @ModelAttribute Remate remate ) {
+	public ModelAndView remateNombre(@PathVariable String tipoRemate, @ModelAttribute Subasta remate, HttpServletRequest request) {
 		
 		switch (tipoRemate) {
 		case "vehiculo":
@@ -49,5 +59,5 @@ public class ControladorRemate {
 		}
 		return null;
 	}
-}
 
+}

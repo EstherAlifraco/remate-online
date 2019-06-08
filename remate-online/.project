@@ -36,54 +36,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>src/main/webapp/img/Remates.gif</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/Remates.gif</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/footer/facebook.png</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/Footer/facebook.png</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/footer/instagram.png</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/Footer/instagram.png</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/footer/twitter.png</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/Footer/twitter.png</location>
-		</link>
-		<link>
 			<name>src/main/webapp/img/home/remates.jpg</name>
 			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates.jpg</location>
+			<location>E:/impre/Taller Web/Remate OnLine/remate-online/src/main/webapp/img/home/remates.jpg</location>
 		</link>
 		<link>
 			<name>src/main/webapp/img/home/remates1.jpg</name>
 			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates1.jpg</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/home/remates2.jpg</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates2.jpg</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/home/remates3.jpg</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates3.jpg</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/home/remates4.jpg</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates4.jpg</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/home/remates5.png</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/Img/home/remates5.png</location>
+			<location>E:/impre/Taller Web/Remate OnLine/remate-online/src/main/webapp/img/home/remates1.jpg</location>
 		</link>
 	</linkedResources>
 </projectDescription>

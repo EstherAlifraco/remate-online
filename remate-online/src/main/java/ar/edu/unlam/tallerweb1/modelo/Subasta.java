@@ -8,11 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 
 
 @Entity
@@ -23,7 +21,8 @@ public class Subasta {
 	   @Column(name= "ID")
 	   private Long id;
 	   @Temporal(TemporalType.TIMESTAMP) //Esta anotación hace posible mapear las fechas con la bas de datos, tipo fecha y hora.
-	   private Date fecha;
+	   private Date fechaInicio;
+	   private Date fechaCierre;
 	   @Column(name= "TIPO")
 	   private String tipo;
 	   @Column(name= "NOMBRE")
@@ -32,11 +31,8 @@ public class Subasta {
 	   private Double precio;
 	   @Column(name= "DESCRIPCION")
 	   private String descripcion;
-	   
-	   @ManyToOne
-	   private Remate remate;
-	   
-
+	 
+    
 	public Long getId() {
 		return id;
 	}
@@ -45,12 +41,20 @@ public class Subasta {
 		this.id = id;
 	}
 
-	public Date getFecha() {
-		return fecha;
+	public Date getFechaInicio() {
+		return fechaInicio;
 	}
 
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	public Date getFechaCierre() {
+		return fechaCierre;
+	}
+
+	public void setFechaCierre(Date fechaCierre) {
+		this.fechaCierre = fechaCierre;
 	}
 
 	public String getNombre() {
@@ -85,14 +89,5 @@ public class Subasta {
 		this.descripcion = descripcion;
 	}
 
-	public Remate getRemate() {
-		return remate;
-	}
-
-	public void setRemate(Remate remate) {
-		this.remate = remate;
-	}
-
-	
 }
 
