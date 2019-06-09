@@ -2,15 +2,9 @@ package ar.edu.unlam.tallerweb1.modelo;
 
 
 import java.util.Date;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 
 @Entity
@@ -31,6 +25,12 @@ public class Subasta {
 	   private Double precio;
 	   @Column(name= "DESCRIPCION")
 	   private String descripcion;
+	   
+	   @ManyToMany(cascade = CascadeType.ALL)
+	    @JoinTable(name = "subastaUsuario",
+	        joinColumns = {@JoinColumn(name = "subastaId", referencedColumnName = "id")},
+	        inverseJoinColumns = {@JoinColumn(name = "usuarioId", referencedColumnName = "id")})
+	    private Set<Usuario> usuario;
 	 
     
 	public Long getId() {
@@ -89,5 +89,12 @@ public class Subasta {
 		this.descripcion = descripcion;
 	}
 
+	public Set<Usuario> getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Set<Usuario> usuario) {
+		this.usuario = usuario;
+	}
 }
 

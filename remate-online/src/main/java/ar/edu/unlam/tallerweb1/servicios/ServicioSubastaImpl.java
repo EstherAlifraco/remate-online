@@ -13,11 +13,11 @@ import ar.edu.unlam.tallerweb1.modelo.Subasta;
 
 @Service("servicioSubasta")
 @Transactional
-public class ServicioSubastaImpl implements ServicioSubasta{
-	
+public class ServicioSubastaImpl implements ServicioSubasta {
+
 	@Inject
 	private SubastaDao servicioSubastaDao;
-	
+
 	@SuppressWarnings("unused")
 	@Inject
 	private UsuarioDao servicioUsuarioDao;
@@ -35,8 +35,7 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 
 	@Override
 	public List<Subasta> todosLasSubastas() {
-		return servicioSubastaDao.todosLasSubastas();
+		return servicioSubastaDao.findAll();
 	}
-
 
 }

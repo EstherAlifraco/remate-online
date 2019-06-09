@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -43,6 +45,10 @@ public class ServicioUsuarioImpl implements ServicioUsuario{
 	@Override
 	public void guardarUsuario(Usuario usuario) {
 		servicioUsuarioDao.save(usuario);
-		
+	}
+	
+	@Override
+	public List<Usuario> todosLosUsuarios() {
+		return servicioUsuarioDao.findAll();
 	}
 }

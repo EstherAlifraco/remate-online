@@ -1,9 +1,13 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,9 @@ public class Usuario {
 	private String password;
 	private String rol; //para cuando hagamos el rol admin.
 	private String nombre;
+	
+	@ManyToMany(mappedBy = "usuario")
+    private Set<Subasta> subasta = new HashSet<>();
 	
 	public Long getId() {
 		return id;
@@ -50,5 +57,11 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+	public Set<Subasta> getSubasta() {
+		return subasta;
+	}
+	public void setSubasta(Set<Subasta> subasta) {
+		this.subasta = subasta;
+	}
+		
 }

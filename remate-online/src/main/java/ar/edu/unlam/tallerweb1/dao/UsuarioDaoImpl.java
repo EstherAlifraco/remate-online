@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 
@@ -50,5 +52,12 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	@Override
 	public void save(Usuario usuario) {
 		sessionFactory.getCurrentSession().save(usuario);		
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Usuario> findAll() {
+		return (sessionFactory.getCurrentSession().createCriteria(Usuario.class).list());
+
 	}
 }

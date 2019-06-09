@@ -11,7 +11,7 @@ public interface SubastaDao {
 
 	Subasta buscarSubasta(String nombre);
 
-	List<Subasta> todosLasSubastas();
+	List<Subasta> findAll();
 	
 	List<Usuario> listaDeUsuariosDao();
 

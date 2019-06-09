@@ -35,7 +35,7 @@ public class SubastaDaoImpl implements SubastaDao{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Subasta> todosLasSubastas() {
+	public List<Subasta> findAll() {
 		return (sessionFactory.getCurrentSession().createCriteria(Subasta.class).list());
 
 	}
