@@ -65,7 +65,7 @@
 			</div>
 	<footer>		
      <div class="Pie-pagina">
-                <p>Telefono: 5555-5555</p>
+                Telefono: 5555-5555<br>
 <a title="facebook" href="https://www.facebook.com/"><img src="${url}/img/footer/facebook.png" width="40" height="40"></a>
 ${facebook}
 <a title="twitter" href="https://www.twitter.com/"><img src="${url}/img/footer/twitter.png" width="40" height="40"></a>
