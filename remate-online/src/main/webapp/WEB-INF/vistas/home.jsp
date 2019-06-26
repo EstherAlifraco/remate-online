@@ -7,20 +7,19 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:nav-footer>
 	<jsp:attribute name="body">
-	 <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-    width: 70%;
-    margin: auto;
-  }
-  .item {
-      display: block;
-      width: 100%;
-      height: 500px;
-  }
-  </style>
-    <div class="container">
-     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<link href="${url}/css/clases.css" rel="stylesheet" >
+	 
+    <div class="contenedor_principal">
+    <br>
+    <br>
+    <div align="center">
+    <a class="boton_personalizado" href="${url}/remate">Comenzar </a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+     <div id="myCarousel" class="carousel slide" data-ride="carousel">  
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

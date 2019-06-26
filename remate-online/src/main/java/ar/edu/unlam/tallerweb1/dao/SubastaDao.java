@@ -7,13 +7,15 @@ import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 public interface SubastaDao {
 	
-	void guardarSubasta(Subasta subasta);
-
-	Subasta buscarSubasta(String nombre);
+	void save(Subasta subasta);
+	
+	Subasta getSubastaId(Long id);
 
 	List<Subasta> findAll();
 	
 	List<Usuario> listaDeUsuariosDao();
+	
+	Subasta consultarSubastaDao(Long id);
 
 }
 

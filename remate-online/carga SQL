@@ -1,0 +1,31 @@
+create database db;
+
+drop database db;
+
+use db;
+
+INSERT INTO SUB_CATEGORIA(ID, TIPO)
+VALUES  (1, 'PICK UP'),
+		(2, 'UTILITARIO'),
+        (3, 'AUTO'),
+        (4, 'MOTO');
+        
+INSERT INTO SUBASTA(ID, fechaInicio, fechaCierre, PRECIO_BASE, DESCRIPCION)
+VALUES  (300, '2019-06-20 10:00:00', '2019-06-30 11:00:00', 60.000, 'Vehiculo en excelente estado'),
+        (301, '2019-06-10 08:30:00', '2019-07-15 14:00:00', 40.000, 'Vehiculo con problemas en el motor'),
+        (302, '2019-06-25 15:00:00', '2019-07-22 06:00:00', 80.000, 'Vehiculo en excelente estado'),
+		(303, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 120.000, 'Vehiculo en optimo estado');
+
+INSERT INTO VEHICULO(ID, MARCA, MODELO, PATENTE, COLOR, VEHICULO_subCategoria, subastaVehiculo_ID)
+VALUES (101, 'M20-RAM', '2015', 'PAA 254', 'AZUL', 1, 300),
+       (102, 'FORD', '2016', 'PZC 302', 'GRIS', 3, 301),
+       (103, 'VOLKSWAGEN', '2017', 'AB 254 CD', 'BLANCO', 1,302),
+       (104, 'RENAULT', '2017', 'AA 123 BB', 'BLANCO', 2,303);
+       
+INSERT INTO Usuario(id,email,password,rol,nombre) 
+VALUES  (200,'usuario2@gmail.com','456','cliente','est'),
+		(201,'marcelo@gmail.com','789','cliente','marcelo'),
+		(202,'admin@gmail.com','111','admin','administrador'),
+		(203,'cli@gmail.com','222','cliente','pauly'); 
+        
+       select * from vehiculo; 

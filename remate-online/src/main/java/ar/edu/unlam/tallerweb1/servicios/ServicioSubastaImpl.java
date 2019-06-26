@@ -9,33 +9,42 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.unlam.tallerweb1.dao.SubastaDao;
 import ar.edu.unlam.tallerweb1.dao.UsuarioDao;
+import ar.edu.unlam.tallerweb1.dao.VehiculoDao;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 
 @Service("servicioSubasta")
+@SuppressWarnings("unused")
 @Transactional
-public class ServicioSubastaImpl implements ServicioSubasta {
+public class ServicioSubastaImpl implements ServicioSubasta{
 
 	@Inject
 	private SubastaDao servicioSubastaDao;
 
-	@SuppressWarnings("unused")
 	@Inject
 	private UsuarioDao servicioUsuarioDao;
+	
+	@Inject
+	private VehiculoDao servicioVehiculoDao;
 
 	@Override
 	public void guardarSubasta(Subasta subasta) {
-		servicioSubastaDao.guardarSubasta(subasta);
+		servicioSubastaDao.save(subasta);
 	}
-
+	
 	@Override
-	public Subasta buscarSubasta(String nombre) {
-		return servicioSubastaDao.buscarSubasta(nombre);
+	public Subasta getSubastaId(Long id) {
+		return servicioSubastaDao.getSubastaId(id);
 
 	}
 
 	@Override
 	public List<Subasta> todosLasSubastas() {
 		return servicioSubastaDao.findAll();
+	}
+	
+	@Override
+	public Subasta consultarSubasta(Long id) {
+		return servicioSubastaDao.consultarSubastaDao(id);
 	}
 
 }

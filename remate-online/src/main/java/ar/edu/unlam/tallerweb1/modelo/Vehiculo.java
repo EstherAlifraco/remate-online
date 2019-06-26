@@ -1,11 +1,15 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,8 +29,13 @@ public class Vehiculo{
 	@Column(name= "COLOR")
 	private String color;
 	
-	@ManyToOne
+	@OneToOne
 	private Subasta subastaVehiculo;
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "VEHICULO_subCategoria", nullable = false)
+	private SubCategoriaV subCategoria;
+	
 	
 	public Long getId() {
 		return id;
@@ -64,5 +73,12 @@ public class Vehiculo{
 	public void setSubastaVehiculo(Subasta subastaVehiculo) {
 		this.subastaVehiculo = subastaVehiculo;
 	}
+	public SubCategoriaV getSubCategoria() {
+		return subCategoria;
+	}
+	public void setSubCategoria(SubCategoriaV subCategoria) {
+		this.subCategoria = subCategoria;
+	}
+	
 	
 }

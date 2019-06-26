@@ -8,11 +8,27 @@
 <t:nav-footer>
 	<jsp:attribute name="body">
 	    <br>
-	    <div class="titulo"><h1>INMUEBLE</h1>
+	    <div class="titulo"><h1>REMATES</h1>
 	</div>
 	<br>
+	<link href="${url}/css/clases.css" rel="stylesheet" >
+	<div class="contenedor_principal">
+	
+	<a class="boton_personalizado_remate" href="${url}/remate/vehiculoTipo">Vehiculo</a>
+	
+	<a class="boton_personalizado_remate" href="${url}/remate/inmueble">Inmueble</a>
+	
+	<a class="boton_personalizado_remate" href="${url}/remate/otro">Otro</a>
+	
 	<br>
 	<br>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	
 
 
 	</jsp:attribute>

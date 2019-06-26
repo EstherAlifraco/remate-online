@@ -7,10 +7,11 @@ import ar.edu.unlam.tallerweb1.modelo.Subasta;
 public interface ServicioSubasta {
 	
 	void guardarSubasta(Subasta subasta);
-
-	Subasta buscarSubasta(String nombre);
+	
+	Subasta getSubastaId(Long id);
 
 	List<Subasta> todosLasSubastas();
-
+	
+	Subasta consultarSubasta(Long id);
 
 }

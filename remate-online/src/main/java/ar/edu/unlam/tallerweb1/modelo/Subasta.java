@@ -19,10 +19,10 @@ public class Subasta {
 	   private Date fechaCierre;
 	   @Column(name= "TIPO")
 	   private String tipo;
-	   @Column(name= "NOMBRE")
-		private String nombre;
-	   @Column(name= "PRECIO")
-	   private Double precio;
+	   @Column(name= "PRECIO_BASE")
+	   private Double precioBase;
+	   @Column(name= "PRECIO_CIERRE")
+	   private Double precioCierre;
 	   @Column(name= "DESCRIPCION")
 	   private String descripcion;
 	   
@@ -31,6 +31,9 @@ public class Subasta {
 	        joinColumns = {@JoinColumn(name = "subastaId", referencedColumnName = "id")},
 	        inverseJoinColumns = {@JoinColumn(name = "usuarioId", referencedColumnName = "id")})
 	    private Set<Usuario> usuario;
+	   
+	   @OneToOne
+	   private Vehiculo vehiculo;
 	 
     
 	public Long getId() {
@@ -57,14 +60,6 @@ public class Subasta {
 		this.fechaCierre = fechaCierre;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	public String getTipo() {
 		return tipo;
 	}
@@ -73,12 +68,20 @@ public class Subasta {
 		this.tipo = tipo;
 	}
 
-	public Double getPrecio() {
-		return precio;
+	public Double getPrecioBase() {
+		return precioBase;
 	}
 
-	public void setPrecio(Double precio) {
-		this.precio = precio;
+	public void setPrecioBase(Double precioBase) {
+		this.precioBase = precioBase;
+	}
+
+	public Double getPrecioCierre() {
+		return precioCierre;
+	}
+
+	public void setPrecioCierre(Double precioCierre) {
+		this.precioCierre = precioCierre;
 	}
 
 	public String getDescripcion() {
@@ -95,6 +98,14 @@ public class Subasta {
 
 	public void setUsuario(Set<Usuario> usuario) {
 		this.usuario = usuario;
+	}
+
+	public Vehiculo getVehiculo() {
+		return vehiculo;
+	}
+
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
 	}
 }
 

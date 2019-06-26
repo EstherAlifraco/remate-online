@@ -31,7 +31,7 @@
         <a class="dropdown-toggle" style="color: white" data-toggle="dropdown" href="#">Remates
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="${url}/remate/vehiculo" style="color: #075C78">Vehiculos</a></li>
+          <li><a href="${url}/remate/vehiculoTipo" style="color: #075C78">Vehiculos</a></li>
           <li><a href="${url}/remate/inmueble" style="color: #075C78">Inmueble</a></li>
           <li><a href="${url}/remate/otro" style="color: #075C78">Otro</a></li>
         </ul>
@@ -65,13 +65,14 @@
 			</div>
 	<footer>		
      <div class="Pie-pagina">
-                Telefono: 5555-5555<br>
+                Telefono: 5555-5555
+                <br>
 <a title="facebook" href="https://www.facebook.com/"><img src="${url}/img/footer/facebook.png" width="40" height="40"></a>
-${facebook}
+
 <a title="twitter" href="https://www.twitter.com/"><img src="${url}/img/footer/twitter.png" width="40" height="40"></a>
-${twitter}
+
 <a title="instagram" href="https://www.instagram.com/"><img src="${url}/img/footer/instagram.png" width="40" height="40"></a>
-${instagram}
+
       </div>
       </footer>
 		<script src="${url}/js/jquery-3.0.0.min.js"></script>

@@ -17,4 +17,3 @@
 
 	</jsp:attribute>
 </t:nav-footer>
-</html>

@@ -1,7 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -35,24 +34,24 @@ public class ControladorSubasta {
 	
 	
 	@RequestMapping (path="remate/{tipoRemate}")
-	public ModelAndView remateNombre(@PathVariable String tipoRemate, @ModelAttribute Subasta remate, HttpServletRequest request) {
+	public ModelAndView remateNombre(@PathVariable String tipoRemate, @ModelAttribute Subasta remate) {
 		
 		switch (tipoRemate) {
 		case "vehiculo":
 			ModelMap model= new ModelMap();
-			String vehiculo= remate.getNombre();
+			String vehiculo= remate.getTipo();
 			model.put("vehiculo", vehiculo);
-			return new ModelAndView("vehiculo", model);
+			return new ModelAndView("tipoVehiculo", model);
 			
 		case "inmueble":
 			ModelMap model1= new ModelMap();
-			String inmueble= remate.getNombre();
+			String inmueble= remate.getTipo();
 			model1.put("inmueble", inmueble);
 			return new ModelAndView("inmueble", model1);
 			
 		case "otro":
 			ModelMap model2= new ModelMap();
-			String otro= remate.getNombre();
+			String otro= remate.getTipo();
 			model2.put("otro", otro);
 			return new ModelAndView("otro", model2);
 		
