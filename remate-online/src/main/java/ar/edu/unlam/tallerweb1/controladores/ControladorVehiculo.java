@@ -104,14 +104,11 @@ public class ControladorVehiculo {
 		
 		ModelMap model = new ModelMap();
 		Vehiculo vehiculo = new Vehiculo();
-		Subasta subasta = new Subasta();
 		
 		model.put("vehiculo", servicioVehiculo.getId(id));
-		model.put("subasta", servicioSubasta.consultarSubasta(id));
-		model.put("id", subasta);
-		model.put("fechaInicio", subasta);
-		model.put("precioBase", subasta);
-		model.put("descripcion", subasta);
+		//model.put("subasta", servicioSubasta.consultarSubasta(id));
+		
+		
 		
 		return new ModelAndView("subastaVehiculo/vehiculo", model);	
    }

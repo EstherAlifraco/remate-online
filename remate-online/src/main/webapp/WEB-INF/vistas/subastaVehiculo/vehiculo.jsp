@@ -29,8 +29,8 @@
 	<div class="texto">
 <p id="demo"></p>
 <br>
-     ${subasta.precioBase}
-	 ${subasta.descripcion}
+     ${vehiculo.subastaVehiculo.precioBase}
+	 ${vehiculo.subastaVehiculo.descripcion}
 	<a class="boton_personalizado" href="#">Ofertar</a>
 <br>
 <br>
@@ -41,7 +41,7 @@
 <script>
 
 //Establece la fecha.
-var countDownDate = new Date("${subasta.fechaInicio}").getTime();
+var countDownDate = new Date("${vehiculo.subastaVehiculo.fechaInicio}").getTime();
 
 // Actualiza cada un segundo.
 var x = setInterval(function() {
@@ -53,8 +53,8 @@ var x = setInterval(function() {
   var distance = countDownDate - now;
     
   // Calculos de tiempo para día, hora minutos y segundos.
-  var year = Math.floor(distance / (1000 * 60 * 60 * 24 * 30 * 365)) / (1000 * 60 * 60 * 24 *30));
-  var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+  var year = Math.floor(distance / (1000 * 60 * 60 * 24 * 30 * 365 / (1000 * 60 * 60 * 24 *30));
+  var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30 / (1000 * 60 * 60 * 24));
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
