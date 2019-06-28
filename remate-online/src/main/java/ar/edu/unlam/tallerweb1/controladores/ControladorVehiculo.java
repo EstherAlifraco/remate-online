@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unlam.tallerweb1.modelo.SubCategoriaV;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
-import ar.edu.unlam.tallerweb1.servicios.ServicioSubCategoriaV;
+import ar.edu.unlam.tallerweb1.servicios.ServicioSubCategoria;
 import ar.edu.unlam.tallerweb1.servicios.ServicioSubasta;
 import ar.edu.unlam.tallerweb1.servicios.ServicioVehiculo;
 
@@ -35,7 +35,7 @@ public class ControladorVehiculo {
 	
 	
 	@Inject
-	private ServicioSubCategoriaV servicioSubCategoriaV;
+	private ServicioSubCategoria servicioSubCategoria;
 	
 	/*@RequestMapping (path="/vehiculo/{tipoVehiculo}")
 	public ModelAndView vehiculoNombre(@PathVariable SubCategoriaV tipoVehiculo, String tipoVehiculos) {
@@ -81,7 +81,7 @@ public class ControladorVehiculo {
 	public ModelAndView consultarTipo() {
 		
 		ModelMap model =new ModelMap();
-		List<SubCategoriaV> subCategoriaList = servicioSubCategoriaV.consultarSubCategoriaV();
+		List<SubCategoriaV> subCategoriaList = servicioSubCategoria.consultarSubCategoriaV();
 	
 		model.put("subCategoriaList", subCategoriaList);
 		
@@ -106,8 +106,6 @@ public class ControladorVehiculo {
 		Vehiculo vehiculo = new Vehiculo();
 		
 		model.put("vehiculo", servicioVehiculo.getId(id));
-		//model.put("subasta", servicioSubasta.consultarSubasta(id));
-		
 		
 		
 		return new ModelAndView("subastaVehiculo/vehiculo", model);	

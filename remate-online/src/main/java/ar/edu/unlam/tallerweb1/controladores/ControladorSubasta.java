@@ -47,13 +47,13 @@ public class ControladorSubasta {
 			ModelMap model1= new ModelMap();
 			String inmueble= remate.getTipo();
 			model1.put("inmueble", inmueble);
-			return new ModelAndView("inmueble", model1);
+			return new ModelAndView("tipoInmueble", model1);
 			
 		case "otro":
 			ModelMap model2= new ModelMap();
 			String otro= remate.getTipo();
 			model2.put("otro", otro);
-			return new ModelAndView("otro", model2);
+			return new ModelAndView("tipoOtro", model2);
 		
 		}
 		return null;

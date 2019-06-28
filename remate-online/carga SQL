@@ -1,6 +1,5 @@
 create database db;
-
-drop database db;
+#drop database db;
 
 use db;
 
@@ -10,18 +9,73 @@ VALUES  (1, 'PICK UP'),
         (3, 'AUTO'),
         (4, 'MOTO');
         
+        
+INSERT INTO SUB_CATEGORIA_I(ID, TIPO)
+VALUES  (5, 'MONOHAMBIENTE'),
+		(6, 'DEPARTAMENTO'),
+        (7, 'DUPLEX'),
+        (8, 'CASA QUINTA'),
+        (9, 'CASA');
+        
+ INSERT INTO SUB_CATEGORIA_OTRO(ID, TIPO)
+VALUES  (10, 'ELECTRODOMESTICOS'),
+		(11, 'MUEBLES'),
+        (12, 'ANTIGÛEDADES'),
+        (13, 'DECORACION');        
+        
 INSERT INTO SUBASTA(ID, fechaInicio, fechaCierre, PRECIO_BASE, DESCRIPCION)
-VALUES  (300, '2019-06-20 10:00:00', '2019-06-30 11:00:00', 60.000, 'Vehiculo en excelente estado'),
-        (301, '2019-06-10 08:30:00', '2019-07-15 14:00:00', 40.000, 'Vehiculo con problemas en el motor'),
-        (302, '2019-06-25 15:00:00', '2019-07-22 06:00:00', 80.000, 'Vehiculo en excelente estado'),
-		(303, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 120.000, 'Vehiculo en optimo estado');
-
+VALUES  (300, '2019-06-20 10:00:00', '2019-06-30 11:00:00', 60000, 'Vehiculo en excelente estado'),
+        (301, '2019-06-10 08:30:00', '2019-07-15 14:00:00', 40000, 'Vehiculo con problemas en el motor'),
+        (302, '2019-06-25 15:00:00', '2019-07-22 06:00:00', 80000, 'Vehiculo en excelente estado'),
+		(303, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 120000, 'Vehiculo en optimo estado'),
+        (310, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (311, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 900000, 'Excelente estado'),
+        (312, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (313, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (314, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (315, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (316, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (317, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (318, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (319, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (320, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
+        (321, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 4000, 'Excelente estado'),
+        (322, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 16000, 'Excelente estado'),
+        (323, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 50000, 'Excelente estado'),
+        (324, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 1500, 'Excelente estado'),
+        (325, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 4500, 'Excelente estado'),
+        (326, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 12000, 'Excelente estado'),
+        (327, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 600, 'Excelente estado'),
+        (328, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 900, 'Excelente estado');
+        
 INSERT INTO VEHICULO(ID, MARCA, MODELO, PATENTE, COLOR, VEHICULO_subCategoria, subastaVehiculo_ID)
 VALUES (101, 'M20-RAM', '2015', 'PAA 254', 'AZUL', 1, 300),
        (102, 'FORD', '2016', 'PZC 302', 'GRIS', 3, 301),
        (103, 'VOLKSWAGEN', '2017', 'AB 254 CD', 'BLANCO', 1,302),
        (104, 'RENAULT', '2017', 'AA 123 BB', 'BLANCO', 2,303);
        
+INSERT INTO INMUEBLE(ID, CALLE, NUMERO, HABITACIONES, LOCALIDAD, CIUDAD, INMUEBLE_subCategoria, subastaInmueble_ID)
+VALUES  (400, 'Simancas', 33, 4, 'Sant Adria', 'Barcelona', 6, 310),
+        (401, 'Tarradellas', 116, 3, 'Hospital Clinic', 'Barcelona', 6, 311),
+		(402, 'Via Molini', 59, 4, 'Monteciccardo', 'Pesaro', 6, 312),
+		(403, 'Picchincha', 5258, 3, 'Tablada', 'La Matanza', 7, 313),
+		(404, 'Nazar', 116, 5, 'Tablada', 'La Matanza', 7, 314),
+		(405, 'Tarradellas', 116, 2, 'Hospital Clinic', 'Barcelona', 8, 315),
+		(406, 'Arieta', 3000, 4, 'an Justo', 'La Matanza', 8, 316),
+		(407, 'Tarradellas', 116, 4, 'Hospital Clinic', 'Barcelona', 5, 318),
+		(408, 'Tarradellas', 116, 4, 'Hospital Clinic', 'Barcelona', 9, 319),
+		(409, 'Tarradellas', 116, 4, 'Hospital Clinic', 'Barcelona', 5, 320);
+        
+INSERT INTO OTRO(ID, NOMBRE, DESCRIPCION, OTRO_subCategoria, subastaOtro_ID)
+VALUES  (500, 'Cafetera', 'Marca Philips - Modelo: Cafe Gaia', 10, 321),
+		(501, 'Lavarropas', 'Marca Candy - Modelo: Gvf1410 Smart Wifi Inverter 10 Kg 1400 Rpm', 10, 322),
+        (502, 'TV Smart', 'Marca LG - Modelo: 50 Lg 50uk6550 4k Uhd', 10, 323),
+        (503, 'Mesa', 'Nordica Escandinava 60x100 Comedor Cocina Maciza Y Mdf', 11, 324),
+        (504, 'Mesa', 'Laqueada Minimalista Madera Moderna Asia 120cm', 11, 325),
+        (505, 'Puerta', 'Estilo Antiguo Nro-1. Con Vitreaux Y Tallados ! Única', 12, 326),
+        (506, 'Luces', 'Guirnalda Microled Calidas Alambre Tira 30 Led A Pila', 13, 327),
+        (507, 'Cartel Luminoso Led ', 'Pizarra Light Box Cine Letras Portatil', 13, 328);
+      
 INSERT INTO Usuario(id,email,password,rol,nombre) 
 VALUES  (200,'usuario2@gmail.com','456','cliente','est'),
 		(201,'marcelo@gmail.com','789','cliente','marcelo'),

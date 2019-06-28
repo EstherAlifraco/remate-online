@@ -1,11 +1,15 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,11 +25,17 @@ public class Inmueble {
 	private int numero;
 	@Column(name= "HABITACIONES")
 	private int habitaciones;
-	@Column(name="BARRIO")
-	private String barrio;
+	@Column(name="LOCALIDAD")
+	private String localidad;
+    @Column(name="CIUDAD")
+    private String ciudad;
 	
-	@ManyToOne
+	@OneToOne
 	private Subasta subastaInmueble;
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "INMUEBLE_subCategoria", nullable = false)
+	private SubCategoriaIn subCategoria;
 
 	public Long getId() {
 		return id;
@@ -59,12 +69,20 @@ public class Inmueble {
 		this.habitaciones = habitaciones;
 	}
 
-	public String getBarrio() {
-		return barrio;
+	public String getLocalidad() {
+		return localidad;
 	}
 
-	public void setBarrio(String barrio) {
-		this.barrio = barrio;
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
 	}
 
 	public Subasta getSubastaInmueble() {
@@ -74,5 +92,14 @@ public class Inmueble {
 	public void setSubastaInmueble(Subasta subastaInmueble) {
 		this.subastaInmueble = subastaInmueble;
 	}
+
+	public SubCategoriaIn getSubCategoria() {
+		return subCategoria;
+	}
+
+	public void setSubCategoria(SubCategoriaIn subCategoria) {
+		this.subCategoria = subCategoria;
+	}
+	
 }
 

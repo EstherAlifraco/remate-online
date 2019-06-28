@@ -9,11 +9,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import ar.edu.unlam.tallerweb1.modelo.SubCategoriaIn;
+import ar.edu.unlam.tallerweb1.modelo.SubCategoriaOtro;
 import ar.edu.unlam.tallerweb1.modelo.SubCategoriaV;
 
-@Repository("SubCategoriaVDao")
+@Repository("SubCategoriaDao")
 @SuppressWarnings("unchecked")
-public class SubCategoriaVDaoImpl implements SubCategoriaVDao {
+public class SubCategoriaDaoImpl implements SubCategoriaDao {
 	
 	@Inject
 	private SessionFactory sessionFactory;
@@ -43,4 +45,22 @@ public class SubCategoriaVDaoImpl implements SubCategoriaVDao {
 				.list();
 	}
 	
+	@Override
+	public List<SubCategoriaIn> consultarSubCategoriaInDao(){
+		
+		final Session session = sessionFactory.getCurrentSession();
+		return session.createCriteria(SubCategoriaIn.class)
+				.add(Restrictions.isNotNull("subInId"))
+				.list();
+	}
+	
+	@Override
+	public List<SubCategoriaOtro> consultarSubCategoriaOtroDao(){
+		
+		final Session session = sessionFactory.getCurrentSession();
+		return session.createCriteria(SubCategoriaOtro.class)
+				.add(Restrictions.isNotNull("subOtroId"))
+				.list();
+	}
 }
+

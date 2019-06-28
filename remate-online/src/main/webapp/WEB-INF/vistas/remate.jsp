@@ -16,9 +16,9 @@
 	
 	<a class="boton_personalizado_remate" href="${url}/remate/vehiculoTipo">Vehiculo</a>
 	
-	<a class="boton_personalizado_remate" href="${url}/remate/inmueble">Inmueble</a>
+	<a class="boton_personalizado_remate" href="${url}/remate/inmuebleTipo">Inmueble</a>
 	
-	<a class="boton_personalizado_remate" href="${url}/remate/otro">Otro</a>
+	<a class="boton_personalizado_remate" href="${url}/remate/otroTipo">Otro</a>
 	
 	<br>
 	<br>

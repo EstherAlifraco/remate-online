@@ -1,10 +1,13 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,6 +26,11 @@ public class Otro {
 	
 	@ManyToOne
 	private Subasta subastaOtro;
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "OTRO_subCategoria", nullable = false)
+	private SubCategoriaOtro subCategoria;
+
 
 	public Long getId() {
 		return id;
@@ -55,5 +63,14 @@ public class Otro {
 	public void setSubastaOtro(Subasta subastaOtro) {
 		this.subastaOtro = subastaOtro;
 	}
+
+	public SubCategoriaOtro getSubCategoria() {
+		return subCategoria;
+	}
+
+	public void setSubCategoria(SubCategoriaOtro subCategoria) {
+		this.subCategoria = subCategoria;
+	}
+	
 }
 

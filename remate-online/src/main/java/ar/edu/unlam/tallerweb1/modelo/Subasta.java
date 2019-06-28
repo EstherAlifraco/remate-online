@@ -34,6 +34,12 @@ public class Subasta {
 	   
 	   @OneToOne
 	   private Vehiculo vehiculo;
+	   
+	   @OneToOne
+	   private Inmueble inmueble;
+	   
+	   @OneToOne
+	   private Otro otro;
 	 
     
 	public Long getId() {
@@ -107,5 +113,23 @@ public class Subasta {
 	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 	}
+
+	public Inmueble getInmueble() {
+		return inmueble;
+	}
+
+	public void setInmueble(Inmueble inmueble) {
+		this.inmueble = inmueble;
+	}
+
+	public Otro getOtro() {
+		return otro;
+	}
+
+	public void setOtro(Otro otro) {
+		this.otro = otro;
+	}
+	
+	
 }
 

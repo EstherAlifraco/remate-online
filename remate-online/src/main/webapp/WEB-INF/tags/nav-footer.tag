@@ -14,7 +14,6 @@
 	    <link href="${url}/css/estilo.css" rel="stylesheet" >
 	    <link href="${url}/css/bootstrap-theme.min.css" rel="stylesheet">
 	    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	    <link href="${url}/js/bootstrap.min.js">
@@ -32,8 +31,8 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="${url}/remate/vehiculoTipo" style="color: #075C78">Vehiculos</a></li>
-          <li><a href="${url}/remate/inmueble" style="color: #075C78">Inmueble</a></li>
-          <li><a href="${url}/remate/otro" style="color: #075C78">Otro</a></li>
+          <li><a href="${url}/remate/inmuebleTipo" style="color: #075C78">Inmueble</a></li>
+          <li><a href="${url}/remate/otroTipo" style="color: #075C78">Otro</a></li>
         </ul>
       </li>
       <li class="dropdown">
