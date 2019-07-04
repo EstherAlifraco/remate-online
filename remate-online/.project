@@ -34,16 +34,4 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/main/webapp/img/home/remates.jpg</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/remate-online/src/main/webapp/img/home/remates.jpg</location>
-		</link>
-		<link>
-			<name>src/main/webapp/img/home/remates1.jpg</name>
-			<type>1</type>
-			<location>E:/impre/Taller Web/Remate OnLine/remate-online/src/main/webapp/img/home/remates1.jpg</location>
-		</link>
-	</linkedResources>
 </projectDescription>
