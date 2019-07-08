@@ -42,6 +42,11 @@ public class ServicioSubCategoriaImpl implements ServicioSubCategoria {
 	}
 	
 	@Override
+	public SubCategoriaIn getIdIn(Long subInId) {
+		return servicioSubCategoriaDao.getIdInDao(subInId);
+	}
+	
+	@Override
 	public List<SubCategoriaIn> consultarSubCategoriaIn(){
 		return servicioSubCategoriaDao.consultarSubCategoriaInDao();
 	}
@@ -49,6 +54,11 @@ public class ServicioSubCategoriaImpl implements ServicioSubCategoria {
 	@Override
 	public List<SubCategoriaOtro> consultarSubCategoriaOtro(){
 		return servicioSubCategoriaDao.consultarSubCategoriaOtroDao();
+	}
+	
+	@Override
+	public SubCategoriaOtro getIdOtro(Long subOtroId) {
+		return servicioSubCategoriaDao.getIdOtroDao(subOtroId);
 	}
 
 }

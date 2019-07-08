@@ -9,10 +9,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import ar.edu.unlam.tallerweb1.modelo.Otro;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 @Repository("SubastaDao")
+@SuppressWarnings("unchecked")
 public class SubastaDaoImpl implements SubastaDao{
 	
 
@@ -33,14 +35,12 @@ public class SubastaDaoImpl implements SubastaDao{
 				.add(Restrictions.eq("id", id)).uniqueResult());
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Subasta> findAll() {
 		return (sessionFactory.getCurrentSession().createCriteria(Subasta.class).list());
 
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Usuario> listaDeUsuariosDao(){
 		return (sessionFactory.getCurrentSession().createCriteria(Usuario.class)
@@ -48,12 +48,21 @@ public class SubastaDaoImpl implements SubastaDao{
 		
 	}
 	@Override
-	public Subasta consultarSubastaDao(Long id){
+	public Subasta consultarSubastaVDao(Long id){
 		final Session session = sessionFactory.getCurrentSession();
 		  return (Subasta) session.createCriteria(Subasta.class)
 				.createAlias("vehiculo", "ve")
 				.add(Restrictions.eq("ve.id", id))
 				.uniqueResult();
 	}
-
+	
+	@Override
+	public Otro consultarSubastaODao(Long id){
+		final Session session = sessionFactory.getCurrentSession();
+		  return (Otro) session.createCriteria(Otro.class)
+				.add(Restrictions.eq("id", id))
+				.uniqueResult();
+	}
+	
+	
 }

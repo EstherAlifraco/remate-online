@@ -9,6 +9,13 @@ public interface InmuebleDao {
 	List<Inmueble> consultarSubCategoriaDao(Long subInId);
 	
 	Inmueble getIdDao(Long id);
+	
+	void save(Inmueble inmueble);
+	
+	List<Inmueble> getAllDao();
+	
+	void actualizarInmuebleDao(Inmueble inmueble);
+	
+	void eliminarInmuebleDao(Inmueble inmueble);
 
 }
-

@@ -53,4 +53,20 @@ public class ServicioVehiculoImpl implements ServicioVehiculo{
 		return servicioVehiculoDao.consultarSubCategoriaDao(subVeId);
 	}
 	
+	@Override
+	public List<Vehiculo> getAll() {
+		return servicioVehiculoDao.getAll();
+	}
+	
+	@Override
+	public void actualizarVehiculo(Vehiculo vehiculo) {
+		servicioVehiculoDao.actualizarVehiculo(vehiculo);
+	}
+
+	@Override
+	public void eliminarVehiculo(Vehiculo vehiculo) {
+		servicioVehiculoDao.eliminarVehiculo(vehiculo);
+	}
+
+	
 }

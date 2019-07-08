@@ -18,6 +18,12 @@ public interface ServicioVehiculo {
 	List<Vehiculo> listarVehiculos();
 	
 	List<Vehiculo> consultarSubCategoria(Long subVeId);
+	
+	List<Vehiculo> getAll();
+	
+	void actualizarVehiculo(Vehiculo vehiculo);
+	
+	void eliminarVehiculo(Vehiculo vehiculo);
 
 }
 

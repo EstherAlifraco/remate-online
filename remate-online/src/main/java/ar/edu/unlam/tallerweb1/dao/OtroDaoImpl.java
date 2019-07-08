@@ -38,5 +38,31 @@ public class OtroDaoImpl implements OtroDao {
 				  .uniqueResult();
 	   
 	}
+	
+	@Override
+	public void save(Otro otro) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.save(otro);
 
+	}
+	
+	@Override
+	public List<Otro> getAll() {
+		final Session session = sessionFactory.getCurrentSession();
+		List<Otro> otros = session.createCriteria(Otro.class).list();
+		return otros;
+	}
+	
+	@Override
+	public void actualizarOtro(Otro otro) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.update(otro);
+	}
+
+	@Override
+	public void eliminarOtro(Otro otro) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.delete(otro);
+	}
+	
 }

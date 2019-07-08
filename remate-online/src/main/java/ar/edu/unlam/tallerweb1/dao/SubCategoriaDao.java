@@ -14,8 +14,12 @@ public interface SubCategoriaDao {
 	
 	List<SubCategoriaV> consultarSubCategoriaVDao();
 	
+	 SubCategoriaIn getIdInDao(Long subVInId);
+	
 	List<SubCategoriaIn> consultarSubCategoriaInDao();
 	
 	List<SubCategoriaOtro> consultarSubCategoriaOtroDao();
+	
+	SubCategoriaOtro getIdOtroDao(Long subOtroId);
 
 }

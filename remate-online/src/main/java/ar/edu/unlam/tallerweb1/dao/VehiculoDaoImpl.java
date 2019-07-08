@@ -71,4 +71,23 @@ public class VehiculoDaoImpl implements VehiculoDao{
 		return listaVehiculos;
 	}
 	
+	@Override
+	public List<Vehiculo> getAll() {
+		final Session session = sessionFactory.getCurrentSession();
+		List<Vehiculo> Vehiculos = session.createCriteria(Vehiculo.class).list();
+		return Vehiculos;
+	}
+	
+	@Override
+	public void actualizarVehiculo(Vehiculo vehiculo) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.update(vehiculo);
+	}
+
+	@Override
+	public void eliminarVehiculo(Vehiculo vehiculo) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.delete(vehiculo);
+	}
+	
 }

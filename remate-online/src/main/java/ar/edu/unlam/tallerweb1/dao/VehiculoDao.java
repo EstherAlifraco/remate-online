@@ -17,6 +17,12 @@ public interface VehiculoDao {
 	List<Vehiculo> listarVehiculosDao();
 	
 	List<Vehiculo> consultarSubCategoriaDao(Long subVeId);
+	
+	List<Vehiculo> getAll();
+	
+	void actualizarVehiculo(Vehiculo vehiculo);
+	
+	void eliminarVehiculo(Vehiculo vehiculo);
 
 }
 

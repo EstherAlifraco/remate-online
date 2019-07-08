@@ -23,13 +23,13 @@ public class ServicioUsuarioImpl implements ServicioUsuario{
 	private SubastaDao servicioSubastaDao;
 
 	@Override
-	public Usuario login (String email, String nombre,String password) {
-		return servicioUsuarioDao.login(email,nombre,password);
+	public Usuario login (String email, String password) {
+		return servicioUsuarioDao.login(email,password);
 	}
 
 	@Override
 	public Usuario buscarPorId(Long usuarioId) {
-		return servicioUsuarioDao.buscarPorId(usuarioId);
+		return servicioUsuarioDao.findById(usuarioId);
 	}
 
 	@Override
@@ -51,4 +51,28 @@ public class ServicioUsuarioImpl implements ServicioUsuario{
 	public List<Usuario> todosLosUsuarios() {
 		return servicioUsuarioDao.findAll();
 	}
+	
+	@Override
+	public List<Usuario> usuariosRol(String rol) {
+
+		return servicioUsuarioDao.usuariosRol(rol);
+	}
+	
+	@Override
+	public Usuario consultarUsuarioPorEmail(Usuario usuario) {
+
+		return servicioUsuarioDao.consultarUsuarioPorEmail(usuario);
+	}
+	
+	@Override
+	public void actualizarUsuario(Usuario usuario) {
+		servicioUsuarioDao.actualizarUsuario(usuario);
+	}
+
+	@Override
+	public void eliminarUsuario(Usuario usuario) {
+		servicioUsuarioDao.eliminarUsuario(usuario);
+	}
+
+
 }

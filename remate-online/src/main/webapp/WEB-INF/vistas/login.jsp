@@ -21,9 +21,6 @@
 					<label for="email">Email:</label>
 					<form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />
 					<br>
-					<label for="email">Nombre</label>
-					<form:input path="nombre" id="nombre" type="test" class="form-control" placeholder="Nombre" />
-					<br>
 					<label for="email">Password:</label>
 					<form:input path="password" type="password" id="password" class="form-control" placeholder="Password" />     		  
 					<br>

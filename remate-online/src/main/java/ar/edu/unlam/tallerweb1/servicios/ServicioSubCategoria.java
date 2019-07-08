@@ -14,9 +14,12 @@ List<SubCategoriaV> listarTiposVehiculos();
 	
 	List<SubCategoriaV> consultarSubCategoriaV();
 	
+	SubCategoriaIn getIdIn(Long subInId);
+	
 	List<SubCategoriaIn> consultarSubCategoriaIn();
 	
 	List<SubCategoriaOtro> consultarSubCategoriaOtro();
+	
+	SubCategoriaOtro getIdOtro(Long subOtroId);
 
 }
-

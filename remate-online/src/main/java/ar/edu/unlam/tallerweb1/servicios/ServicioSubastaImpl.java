@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ar.edu.unlam.tallerweb1.dao.SubastaDao;
 import ar.edu.unlam.tallerweb1.dao.UsuarioDao;
 import ar.edu.unlam.tallerweb1.dao.VehiculoDao;
+import ar.edu.unlam.tallerweb1.modelo.Otro;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 
 @Service("servicioSubasta")
@@ -43,8 +44,16 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 	}
 	
 	@Override
-	public Subasta consultarSubasta(Long id) {
-		return servicioSubastaDao.consultarSubastaDao(id);
+	public Subasta consultarSubastaV(Long id) {
+		return servicioSubastaDao.consultarSubastaVDao(id);
 	}
-
+	
+	@Override
+	public Otro consultarSubastaO(Long id) {
+		return servicioSubastaDao.consultarSubastaODao(id);
+	}
+	
+	
+	
+	
 }

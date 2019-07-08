@@ -2,6 +2,7 @@ package ar.edu.unlam.tallerweb1.servicios;
 
 import java.util.List;
 
+import ar.edu.unlam.tallerweb1.modelo.Otro;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 
 public interface ServicioSubasta {
@@ -12,6 +13,9 @@ public interface ServicioSubasta {
 
 	List<Subasta> todosLasSubastas();
 	
-	Subasta consultarSubasta(Long id);
+	Subasta consultarSubastaV(Long id);
+	
+	Otro consultarSubastaO(Long id);
+
 
 }

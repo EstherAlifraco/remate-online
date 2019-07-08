@@ -46,6 +46,15 @@ public class SubCategoriaDaoImpl implements SubCategoriaDao {
 	}
 	
 	@Override
+	public SubCategoriaIn getIdInDao(Long subInId){
+		final Session session = sessionFactory.getCurrentSession();
+		return (SubCategoriaIn) session.createCriteria(SubCategoriaIn.class)				
+				.add(Restrictions.eq("subInId",subInId))
+				.uniqueResult();
+
+	}
+	
+	@Override
 	public List<SubCategoriaIn> consultarSubCategoriaInDao(){
 		
 		final Session session = sessionFactory.getCurrentSession();
@@ -62,5 +71,13 @@ public class SubCategoriaDaoImpl implements SubCategoriaDao {
 				.add(Restrictions.isNotNull("subOtroId"))
 				.list();
 	}
-}
+	
+	@Override
+	public SubCategoriaOtro getIdOtroDao(Long subOtroId){
+		final Session session = sessionFactory.getCurrentSession();
+		return (SubCategoriaOtro) session.createCriteria(SubCategoriaOtro.class)				
+				.add(Restrictions.eq("subOtroId",subOtroId))
+				.uniqueResult();
 
+	}
+}

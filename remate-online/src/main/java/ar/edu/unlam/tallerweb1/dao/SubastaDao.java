@@ -2,6 +2,7 @@ package ar.edu.unlam.tallerweb1.dao;
 
 import java.util.List;
 
+import ar.edu.unlam.tallerweb1.modelo.Otro;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
@@ -15,7 +16,10 @@ public interface SubastaDao {
 	
 	List<Usuario> listaDeUsuariosDao();
 	
-	Subasta consultarSubastaDao(Long id);
+	Subasta consultarSubastaVDao(Long id);
+	
+	Otro consultarSubastaODao(Long id);
+	
 
 }
 

@@ -38,6 +38,32 @@ public class InmuebleDaoImpl implements InmuebleDao {
 				  .uniqueResult();
 	   
 	}
+	
+	@Override
+	public void save(Inmueble inmueble) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.save(inmueble);
+
+	}
+	
+	@Override
+	public List<Inmueble> getAllDao() {
+		final Session session = sessionFactory.getCurrentSession();
+		List<Inmueble> inmuebles = session.createCriteria(Inmueble.class).list();
+		return inmuebles;
+	}
+	
+	@Override
+	public void actualizarInmuebleDao(Inmueble inmueble) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.update(inmueble);
+	}
+
+	@Override
+	public void eliminarInmuebleDao(Inmueble inmueble) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.delete(inmueble);
+	}
+	
 
 }
-

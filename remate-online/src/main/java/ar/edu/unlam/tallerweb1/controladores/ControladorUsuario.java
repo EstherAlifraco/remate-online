@@ -38,17 +38,19 @@ public class ControladorUsuario {
 		modelo.put("usuario", usuario);
 		return new ModelAndView("login", modelo);
 	}
-
+	
 	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
 	public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
 
-		Usuario usuarioBuscado = servicioUsuario.login(usuario.getEmail(),usuario.getNombre(),usuario.getPassword());
+		Usuario usuarioBuscado = servicioUsuario.login(usuario.getEmail(),usuario.getPassword());
 		if (usuarioBuscado != null) {
-			request.getSession().setAttribute("usuarioEmail", usuarioBuscado.getEmail());
-			request.getSession().setAttribute("usuarioNombre", usuarioBuscado.getNombre());
-			request.getSession().setAttribute("usuarioId", usuarioBuscado.getId());
-			return new ModelAndView("redirect:/");
+			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
+		    request.getSession().setAttribute("idUsuario", usuarioBuscado.getId());
+		     
+		     if (usuarioBuscado.getRol().equals("admin")) {
+					return new ModelAndView("administrador/perfilAdmin");
+				}
 		} else {
 			model.put("error", "Usuario o clave incorrecta");
 		}

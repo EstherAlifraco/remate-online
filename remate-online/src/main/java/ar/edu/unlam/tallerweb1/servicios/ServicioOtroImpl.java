@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import ar.edu.unlam.tallerweb1.dao.OtroDao;
 import ar.edu.unlam.tallerweb1.dao.SubastaDao;
 import ar.edu.unlam.tallerweb1.modelo.Otro;
+import ar.edu.unlam.tallerweb1.modelo.Subasta;
+import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
 
 @Service("servicioOtro")
 @Transactional
@@ -31,7 +33,24 @@ public class ServicioOtroImpl implements ServicioOtro {
 	public List<Otro> consultarSubCategoria(Long subOtroId) {
 		return servicioOtroDao.consultarSubCategoriaDao(subOtroId);
 	}
+	
+	@Override
+    public void guardarOtro(Otro otro) {
+    servicioOtroDao.save(otro);
+	}
 
+	@Override
+	public List<Otro> getAll() {
+		return servicioOtroDao.getAll();
+	}
+	
+	@Override
+	public void actualizarOtro(Otro otro) {
+		servicioOtroDao.actualizarOtro(otro);
+	}
 
+	@Override
+	public void eliminarOtro(Otro otro) {
+		servicioOtroDao.eliminarOtro(otro);
+	}
 }
-
