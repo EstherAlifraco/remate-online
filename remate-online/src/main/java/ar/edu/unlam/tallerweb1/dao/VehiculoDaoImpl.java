@@ -90,4 +90,13 @@ public class VehiculoDaoImpl implements VehiculoDao{
 		session.delete(vehiculo);
 	}
 	
+	@Override
+	public List<Vehiculo> consultarVehiculoDao(){
+		
+		final Session session = sessionFactory.getCurrentSession();
+		return session.createCriteria(Vehiculo.class)
+				.add(Restrictions.isNotNull("id"))
+				.list();
+	}
+	
 }

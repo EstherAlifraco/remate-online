@@ -67,6 +67,11 @@ public class ServicioVehiculoImpl implements ServicioVehiculo{
 	public void eliminarVehiculo(Vehiculo vehiculo) {
 		servicioVehiculoDao.eliminarVehiculo(vehiculo);
 	}
+	
+	@Override
+	public List <Vehiculo> consultarVehiculo() {
+		return servicioVehiculoDao.consultarVehiculoDao();
+	}
 
 	
 }

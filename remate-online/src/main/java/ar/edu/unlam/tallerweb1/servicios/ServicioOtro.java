@@ -16,4 +16,6 @@ public interface ServicioOtro {
     void actualizarOtro(Otro otro);
     
 	void eliminarOtro(Otro otro);
+	
+	List <Otro> consultarOtro();
 }

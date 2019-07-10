@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.*;
 
 
+
 @Entity
 @Table(name= "SUBASTA")
 public class Subasta {
@@ -14,9 +15,9 @@ public class Subasta {
 	   @GeneratedValue(strategy=GenerationType.IDENTITY)
 	   @Column(name= "ID")
 	   private Long id;
-	   @Temporal(TemporalType.TIMESTAMP) //Esta anotación hace posible mapear las fechas con la bas de datos, tipo fecha y hora.
-	   private Date fechaInicio;
-	   private Date fechaCierre;
+	   private java.sql.Date fecha =new java.sql.Date(System.currentTimeMillis());
+	   java.util.Date fechaCierre = new java.util.Date();
+	   
 	   @Column(name= "TIPO")
 	   private String tipo;
 	   @Column(name= "PRECIO_BASE")
@@ -50,12 +51,14 @@ public class Subasta {
 		this.id = id;
 	}
 
-	public Date getFechaInicio() {
-		return fechaInicio;
+	
+
+	public java.sql.Date getFecha() {
+		return fecha;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	public void setFecha(java.sql.Date fecha) {
+		this.fecha = fecha;
 	}
 
 	public Date getFechaCierre() {

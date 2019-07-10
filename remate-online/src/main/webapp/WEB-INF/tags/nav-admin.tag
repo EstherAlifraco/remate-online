@@ -33,6 +33,7 @@
           <li><a href="${url}/abmInmueble" style="color: #075C78">Inmuebles</a></li>
           <li><a href="${url}/abmOtro" style="color: #075C78">Otro</a></li>
           <li><a href="${url}/abmUsuario" style="color: #075C78">Usuario</a></li>
+          <li><a href="${url}/abmSubasta" style="color: #075C78">Subasta</a></li>
         </ul>
       </li>          
           </ul>
@@ -63,5 +64,4 @@
 		<jsp:invoke fragment="scripts"/>
 	</body>
 </html>
-
 

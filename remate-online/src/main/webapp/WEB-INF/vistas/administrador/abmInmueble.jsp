@@ -20,6 +20,11 @@
 					<a class="btn btn-default btn-circle"
 						href="${url}/agregarInmueble"><span
 						class="glyphicon glyphicon"></span> Agregar Inmueble</a>
+						
+						<a class="btn btn-default btn-circle"
+						href="${url}/agregarSubastaIn"><span
+						class="glyphicon glyphicon"></span> Agregar Subasta</a>
+						
 
 					<table class="table table-striped custab">
 						<thead>
@@ -30,6 +35,10 @@
 								<th scope="col">Habitaciones</th>
 								<th scope="col">Localidad</th>
 								<th scope="col">Ciudad</th>
+								<th scope="col">N° de Subasta</th>
+								<th scope="col">Fecha Cierre</th>
+								<th scope="col">Precio</th>
+								<th scope="col">Descripcion</th>
 								<th scope="col">Editar</th>
 								<th scope="col">Eliminar</th>
 							</tr>
@@ -37,13 +46,16 @@
 						<tbody>
 							<c:forEach var="i" items="${inmueble}">
 								<tr>
-									<!-- UNA VEZ QUE ESTE CARGADO LOS DATOS SE PUEDEN -->
 									<td><c:out value="${i.id}" /></td>
 									<td><c:out value="${i.calle}" /></td>
 									<td><c:out value="${i.numero}" /></td>
 									<td><c:out value="${i.habitaciones}" /></td>
 									<td><c:out value="${i.localidad}" /></td>
 									<td><c:out value="${i.ciudad}" /></td>
+									<td><c:out value="${i.subastaInmueble.id}" /></td>
+									<td><c:out value="${i.subastaInmueble.fechaCierre}" /></td>
+									<td><c:out value="${i.subastaInmueble.precioBase}" /></td>
+									<td><c:out value="${i.subastaInmueble.descripcion}" /></td>
 									<td><c:out value="" /><a
 										class="btn btn-default btn-circle"
 										href="${url}/modificarInmueble?idInmueble=${i.getId()}"><span
@@ -54,6 +66,7 @@
 											class="glyphicon glyphicon-trash"></span> </a></td>
 								</tr>
 							</c:forEach>
+							
 						</tbody>
 					</table>
 				</div>

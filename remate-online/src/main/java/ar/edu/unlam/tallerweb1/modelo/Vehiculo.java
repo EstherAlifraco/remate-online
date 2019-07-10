@@ -29,7 +29,8 @@ public class Vehiculo{
 	@Column(name= "COLOR")
 	private String color;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "subastaVehiculo_id", referencedColumnName = "id")
 	private Subasta subastaVehiculo;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +25,8 @@ public class Otro {
 	@Column(name="DESCRIPCION")
 	private String descripcion;
 	
-	@ManyToOne
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "subastaOtro_id", referencedColumnName = "id")
 	private Subasta subastaOtro;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)

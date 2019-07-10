@@ -20,12 +20,21 @@
 					<a class="btn btn-default btn-circle"
 						href="${url}/agregarOtro"><span
 						class="glyphicon glyphicon"></span> Agregar Otro</a>
+						
+						<a class="btn btn-default btn-circle"
+						href="${url}/agregarSubastaOtro"><span
+						class="glyphicon glyphicon"></span> Agregar Subasta</a>
+						
 
 					<table class="table table-striped custab">
 						<thead>
 							<tr>
 								<th scope="col">Id</th>
 								<th scope="col">Nombre</th>
+								<th scope="col">Descripcion</th>
+								<th scope="col">N° de Subasta</th>
+								<th scope="col">Fecha Cierre</th>
+								<th scope="col">Precio</th>
 								<th scope="col">Descripcion</th>
 								<th scope="col">Editar</th>
 								<th scope="col">Eliminar</th>
@@ -38,6 +47,10 @@
 									<td><c:out value="${o.id}" /></td>
 									<td><c:out value="${o.nombre}" /></td>
 									<td><c:out value="${o.descripcion}" /></td>
+									<td><c:out value="${o.subastaOtro.id}" /></td>
+									<td><c:out value="${o.subastaOtro.fechaCierre}" /></td>
+									<td><c:out value="${o.subastaOtro.precioBase}" /></td>
+									<td><c:out value="${o.subastaOtro.descripcion}" /></td>
 									<td><c:out value="" /><a
 										class="btn btn-default btn-circle"
 										href="${url}/modificarOtro?idOtro=${o.getId()}"><span

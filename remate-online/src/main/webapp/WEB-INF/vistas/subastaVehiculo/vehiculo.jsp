@@ -41,7 +41,7 @@
 <script>
 
 //Establece la fecha.
-var countDownDate = new Date("${vehiculo.subastaVehiculo.fechaInicio}").getTime();
+var countDownDate = new Date("${vehiculo.subastaVehiculo.fechaCierre}").getTime();
 
 // Actualiza cada un segundo.
 var x = setInterval(function() {

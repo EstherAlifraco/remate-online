@@ -19,5 +19,6 @@ public interface OtroDao {
     
     void eliminarOtro(Otro otro); 
 	
+    List<Otro> consultarOtroDao();
 
 }

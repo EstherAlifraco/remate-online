@@ -64,6 +64,23 @@ public class InmuebleDaoImpl implements InmuebleDao {
 		final Session session = sessionFactory.getCurrentSession();
 		session.delete(inmueble);
 	}
+	@Override
+	public List <Inmueble> consultarSubastaDao(Long subastaId){
+		final Session session = sessionFactory.getCurrentSession();
+		List<Inmueble> inmuebles = session.createCriteria(Inmueble.class)
+				.createAlias("subastaInmueble", "subasta")
+				.add(Restrictions.eq("subasta.subastaId", subastaId))
+				.list();
+		return inmuebles;
+	}
 	
+	@Override
+	public List<Inmueble> consultarInmuebleDao(){
+		
+		final Session session = sessionFactory.getCurrentSession();
+		return session.createCriteria(Inmueble.class)
+				.add(Restrictions.isNotNull("id"))
+				.list();
+	}
 
 }

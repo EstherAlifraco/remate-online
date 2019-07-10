@@ -9,7 +9,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
-import ar.edu.unlam.tallerweb1.modelo.Otro;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
@@ -57,12 +56,56 @@ public class SubastaDaoImpl implements SubastaDao{
 	}
 	
 	@Override
-	public Otro consultarSubastaODao(Long id){
+	public Subasta consultarSubastaODao(Long id){
 		final Session session = sessionFactory.getCurrentSession();
-		  return (Otro) session.createCriteria(Otro.class)
-				.add(Restrictions.eq("id", id))
-				.uniqueResult();
+		  return (Subasta) session.createCriteria(Subasta.class)
+				  .createAlias("otro", "otro")
+					.add(Restrictions.eq("otro.id", id))
+					.uniqueResult();
 	}
 	
+	@Override
+	public Subasta consultarSubastaInDao(Long id){
+		final Session session = sessionFactory.getCurrentSession();
+		  return (Subasta) session.createCriteria(Subasta.class)
+				  .createAlias("inmueble", "in")
+					.add(Restrictions.eq("in.id", id))
+					.uniqueResult();
+	}
 	
+	@Override
+	public List<Subasta> getAll() {
+		final Session session = sessionFactory.getCurrentSession();
+		List<Subasta> subastas = session.createCriteria(Subasta.class).list();
+		return subastas;
+	}
+	
+	@Override
+	public void actualizarSubasta(Subasta subasta) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.update(subasta);
+	}
+
+	@Override
+	public void eliminarSubasta(Subasta subasta) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.delete(subasta);
+	}
+	@Override
+	public List<Subasta> consultarSubastaVeDao(Long subastaVeId){
+		final Session session = sessionFactory.getCurrentSession();
+		List <Subasta> listaSubastas = session.createCriteria(Subasta.class)
+				.createAlias("vehiculo", "ve")
+				.add(Restrictions.eq("ve.subastaVeId", subastaVeId))
+				.list();
+		return listaSubastas;
+	}
+	
+	@Override
+	public Subasta getIdDao(Long id) {
+		  final Session session = sessionFactory.getCurrentSession();
+		  return (Subasta) session.createCriteria(Subasta.class)
+				  .add(Restrictions.eq("id",id))
+				  .uniqueResult();
+}
 }

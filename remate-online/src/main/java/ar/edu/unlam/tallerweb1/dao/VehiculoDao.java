@@ -23,6 +23,8 @@ public interface VehiculoDao {
 	void actualizarVehiculo(Vehiculo vehiculo);
 	
 	void eliminarVehiculo(Vehiculo vehiculo);
+	
+	List<Vehiculo> consultarVehiculoDao();
 
 }
 

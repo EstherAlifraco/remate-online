@@ -17,5 +17,9 @@ public interface ServicioInmueble {
 	void actualizarInmueble(Inmueble inmueble);
 	
 	void eliminarInmueble(Inmueble inmueble);
+	
+	List <Inmueble> consultarSubasta(Long subastaId);
+	
+	List <Inmueble> consultarInmueble();
 
 }

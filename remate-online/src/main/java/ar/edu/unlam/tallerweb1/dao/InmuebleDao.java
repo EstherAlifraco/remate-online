@@ -17,5 +17,9 @@ public interface InmuebleDao {
 	void actualizarInmuebleDao(Inmueble inmueble);
 	
 	void eliminarInmuebleDao(Inmueble inmueble);
+	
+	List <Inmueble> consultarSubastaDao(Long subastaId);
+	
+	List<Inmueble> consultarInmuebleDao();
 
 }

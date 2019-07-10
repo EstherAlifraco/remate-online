@@ -11,7 +11,6 @@ import ar.edu.unlam.tallerweb1.dao.OtroDao;
 import ar.edu.unlam.tallerweb1.dao.SubastaDao;
 import ar.edu.unlam.tallerweb1.modelo.Otro;
 import ar.edu.unlam.tallerweb1.modelo.Subasta;
-import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
 
 @Service("servicioOtro")
 @Transactional
@@ -52,5 +51,10 @@ public class ServicioOtroImpl implements ServicioOtro {
 	@Override
 	public void eliminarOtro(Otro otro) {
 		servicioOtroDao.eliminarOtro(otro);
+	}
+	
+	@Override
+	public List <Otro> consultarOtro() {
+		return servicioOtroDao.consultarOtroDao();
 	}
 }

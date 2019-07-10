@@ -20,6 +20,10 @@
 					<a class="btn btn-default btn-circle"
 						href="${url}/agregarVehiculo"><span
 						class="glyphicon glyphicon"></span> Agregar Vehiculo</a>
+						
+					<a class="btn btn-default btn-circle"
+						href="${url}/agregarSubastaV"><span
+						class="glyphicon glyphicon"></span> Agregar Subasta</a>
 
 					<table class="table table-striped custab">
 						<thead>
@@ -29,6 +33,10 @@
 								<th scope="col">Modelo</th>
 								<th scope="col">Patente</th>
 								<th scope="col">Color</th>
+								<th scope="col">N° de Subasta</th>
+								<th scope="col">Fecha Cierre</th>
+								<th scope="col">Precio</th>
+								<th scope="col">Descripcion</th>
 								<th scope="col">Editar</th>
 								<th scope="col">Eliminar</th>
 							</tr>
@@ -42,6 +50,10 @@
 									<td><c:out value="${v.modelo}" /></td>
 									<td><c:out value="${v.patente}" /></td>
 									<td><c:out value="${v.color}" /></td>
+									<td><c:out value="${v.subastaVehiculo.id}" /></td>
+									<td><c:out value="${v.subastaVehiculo.fechaCierre}" /></td>
+									<td><c:out value="${v.subastaVehiculo.precioBase}" /></td>
+									<td><c:out value="${v.subastaVehiculo.descripcion}" /></td>
 									<td><c:out value="" /><a
 										class="btn btn-default btn-circle"
 										href="${url}/modificarVehiculo?idVehiculo=${v.getId()}"><span

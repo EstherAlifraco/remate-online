@@ -47,7 +47,7 @@
 <script>
 
 //Establece la fecha.
-var countDownDate = new Date("${inmueble.subastaInmueble.fechaInicio}").getTime();
+var countDownDate = new Date("${inmueble.subastaInmueble.fechaCierre}").getTime();
 
 // Actualiza cada un segundo.
 var x = setInterval(function() {

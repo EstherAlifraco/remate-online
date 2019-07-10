@@ -65,4 +65,13 @@ public class OtroDaoImpl implements OtroDao {
 		session.delete(otro);
 	}
 	
+	@Override
+	public List<Otro> consultarOtroDao(){
+		
+		final Session session = sessionFactory.getCurrentSession();
+		return session.createCriteria(Otro.class)
+				.add(Restrictions.isNotNull("id"))
+				.list();
+	}
+	
 }

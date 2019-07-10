@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ar.edu.unlam.tallerweb1.dao.InmuebleDao;
 import ar.edu.unlam.tallerweb1.dao.SubastaDao;
 import ar.edu.unlam.tallerweb1.modelo.Inmueble;
+import ar.edu.unlam.tallerweb1.modelo.Subasta;
 import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
 
 @Service("servicioInmueble")
@@ -52,5 +53,15 @@ public class ServicioInmuebleImpl implements ServicioInmueble{
 	public void eliminarInmueble(Inmueble inmueble) {
 		servicioInmuebleDao.eliminarInmuebleDao(inmueble);
 	}
+	
+	@Override
+	public List <Inmueble> consultarSubasta(Long subastaId) {
+		return servicioInmuebleDao.consultarSubastaDao(subastaId);
+	}
+	
 
+	@Override
+	public List <Inmueble> consultarInmueble() {
+		return servicioInmuebleDao.consultarInmuebleDao();
+	}
 }

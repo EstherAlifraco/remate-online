@@ -30,7 +30,8 @@ public class Inmueble {
     @Column(name="CIUDAD")
     private String ciudad;
 	
-	@OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "subastaInmueble_id", referencedColumnName = "id")
 	private Subasta subastaInmueble;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)

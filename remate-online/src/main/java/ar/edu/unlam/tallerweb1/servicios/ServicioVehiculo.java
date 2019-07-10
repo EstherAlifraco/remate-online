@@ -24,6 +24,8 @@ public interface ServicioVehiculo {
 	void actualizarVehiculo(Vehiculo vehiculo);
 	
 	void eliminarVehiculo(Vehiculo vehiculo);
+	
+	List <Vehiculo> consultarVehiculo();
 
 }
 
