@@ -25,5 +25,4 @@ public interface ServicioUsuario {
 	void actualizarUsuario(Usuario usuario);
 	
 	void eliminarUsuario(Usuario usuario);
-
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
 
-
 public interface ServicioVehiculo {
 	
 	void guardarVehiculo(Vehiculo vehiculo);
@@ -28,4 +27,3 @@ public interface ServicioVehiculo {
 	List <Vehiculo> consultarVehiculo();
 
 }
-

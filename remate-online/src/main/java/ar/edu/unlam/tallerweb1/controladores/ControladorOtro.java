@@ -23,50 +23,33 @@ public class ControladorOtro {
 	@Inject
 	private ServicioSubasta servicioSubasta;
 	
-	
 	@Inject
 	private ServicioSubCategoria servicioSubCategoria;
 	
 	@Inject
 	private ServicioOtro servicioOtro;
 	
-	
 	@RequestMapping("/remate/otroTipo")
 	public ModelAndView consultarTipo() {
-		
 		ModelMap model =new ModelMap();
 		List<SubCategoriaOtro> subCategoriaList = servicioSubCategoria.consultarSubCategoriaOtro();
-	
 		model.put("subCategoriaList", subCategoriaList);
-		
 		return new ModelAndView ("subastaOtro/tipoOtro",model);
 	}
     
 	@RequestMapping(path="/otros/{subOtroId}")
 	public ModelAndView listaOtros(@PathVariable Long subOtroId) {
-		
 		ModelMap model = new ModelMap();
 		List<Otro> listaOtro = servicioOtro.consultarSubCategoria(subOtroId);
-		
 		model.put("listaOtros", listaOtro);
-		
 		return new ModelAndView("subastaOtro/otros", model);	
    }
 	
 	@RequestMapping(path="/otro/{id}")
 	public ModelAndView otroSubasta(@PathVariable Long id) {
-		
 		ModelMap model = new ModelMap();
 		Otro otro = new Otro();
-		
 		model.put("otro", servicioOtro.getId(id));
-		
-		
-		
 		return new ModelAndView("subastaOtro/otro", model);	
    }
 }
-
-
-
-

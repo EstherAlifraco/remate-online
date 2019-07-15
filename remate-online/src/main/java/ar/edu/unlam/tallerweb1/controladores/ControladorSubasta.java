@@ -32,7 +32,6 @@ public class ControladorSubasta {
 		return new ModelAndView("remate", model);
 	}
 	
-	
 	@RequestMapping (path="remate/{tipoRemate}")
 	public ModelAndView remateNombre(@PathVariable String tipoRemate, @ModelAttribute Subasta remate) {
 		
@@ -54,9 +53,7 @@ public class ControladorSubasta {
 			String otro= remate.getTipo();
 			model2.put("otro", otro);
 			return new ModelAndView("tipoOtro", model2);
-		
 		}
 		return null;
 	}
-
 }

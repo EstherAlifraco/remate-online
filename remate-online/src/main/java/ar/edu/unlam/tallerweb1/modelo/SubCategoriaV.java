@@ -10,26 +10,27 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "SUB_CATEGORIA")
 public class SubCategoriaV {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name= "ID")
 	private Long subVeId;
 	@Column(name= "TIPO")
 	private String tipo;
-	
-	
+
 	public Long getSubVeId() {
 		return subVeId;
 	}
+
 	public void setSubVeId(Long subVeId) {
 		this.subVeId = subVeId;
 	}
+
 	public String getTipo() {
 		return tipo;
 	}
+
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 }
-

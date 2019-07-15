@@ -22,7 +22,7 @@
 				</div>
 				
 				<div class="form-group col-md-12">
-					<label for="numero">Numero</label>
+					<label for="numero">Número</label>
 					<form:input type="text" required="required" class="form-control"
 						id="numero" path="numero" placeholder="numero" />
 				</div>
@@ -62,9 +62,7 @@
 		</div>
 	</form:form>
 </div>
-	
 
-			
 	</jsp:attribute>
 </t:nav-admin>	
 	

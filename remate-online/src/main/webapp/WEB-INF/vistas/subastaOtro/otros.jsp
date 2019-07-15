@@ -9,7 +9,7 @@
 	<jsp:attribute name="body">
 	<link href="${url}/css/clases.css" rel="stylesheet" >
 	    <br>
-	    <div class="titulo"><h1>ARTICULOS: </h1>
+	    <div class="titulo"><h1>ARTÍCULOS: </h1>
 	</div>
 	<br>
 	<br>
@@ -25,7 +25,7 @@
 							<thead>
 								<tr>									
 									<th scope="col">Nombre</th>
-									<th scope="col">Descripcion</th>
+									<th scope="col">Descripción</th>
 									
 								</tr>
 							</thead>

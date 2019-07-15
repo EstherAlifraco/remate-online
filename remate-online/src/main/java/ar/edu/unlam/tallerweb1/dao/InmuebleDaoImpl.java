@@ -15,10 +15,10 @@ import ar.edu.unlam.tallerweb1.modelo.Inmueble;
 @Repository("InmuebleDao")
 @SuppressWarnings("unchecked")
 public class InmuebleDaoImpl implements InmuebleDao {
-	
+
 	@Inject
 	private SessionFactory sessionFactory;
-	
+
 	@Override
 	public List<Inmueble> consultarSubCategoriaDao(Long subInId){
 		final Session session = sessionFactory.getCurrentSession();
@@ -29,30 +29,28 @@ public class InmuebleDaoImpl implements InmuebleDao {
 				.list();
 		return listaInmuebles;
 	}
-	
+
 	@Override
 	public Inmueble getIdDao(Long id) {
-		  final Session session = sessionFactory.getCurrentSession();
-		  return (Inmueble) session.createCriteria(Inmueble.class)
-				  .add(Restrictions.eq("id",id))
-				  .uniqueResult();
-	   
+		final Session session = sessionFactory.getCurrentSession();
+		return (Inmueble) session.createCriteria(Inmueble.class)
+				.add(Restrictions.eq("id",id))
+				.uniqueResult();
 	}
-	
+
 	@Override
 	public void save(Inmueble inmueble) {
 		final Session session = sessionFactory.getCurrentSession();
 		session.save(inmueble);
-
 	}
-	
+
 	@Override
 	public List<Inmueble> getAllDao() {
 		final Session session = sessionFactory.getCurrentSession();
 		List<Inmueble> inmuebles = session.createCriteria(Inmueble.class).list();
 		return inmuebles;
 	}
-	
+
 	@Override
 	public void actualizarInmuebleDao(Inmueble inmueble) {
 		final Session session = sessionFactory.getCurrentSession();
@@ -73,14 +71,12 @@ public class InmuebleDaoImpl implements InmuebleDao {
 				.list();
 		return inmuebles;
 	}
-	
+
 	@Override
 	public List<Inmueble> consultarInmuebleDao(){
-		
 		final Session session = sessionFactory.getCurrentSession();
 		return session.createCriteria(Inmueble.class)
 				.add(Restrictions.isNotNull("id"))
 				.list();
 	}
-
 }

@@ -18,7 +18,7 @@
 	<br>
 	El Nombre es: ${otro.nombre}
 	<br>
-	La Descripcion es: ${otro.descripcion}
+	La Descripción es: ${otro.descripcion}
 	<br>
 	<br>
 	<br>

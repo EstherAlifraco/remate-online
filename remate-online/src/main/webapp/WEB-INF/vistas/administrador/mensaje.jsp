@@ -12,8 +12,6 @@
 <br>
 <br>
 
-
-	
 	<div style="text-align: center" class="alert alert-success">
 	
 	    <h3>${aviso}</h3>

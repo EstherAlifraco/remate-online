@@ -22,7 +22,7 @@
 				</div>
 				
 				<div class="form-group col-md-12">
-					<label for="descripcion">Descripcion</label>
+					<label for="descripcion">Descripción</label>
 					<form:input type="text" required="required" class="form-control"
 						id="descripcion" path="descripcion" placeholder="descripcion" />
 				</div>
@@ -44,8 +44,6 @@
 		</div>
 	</form:form>
 </div>
-	
-
 			
 	</jsp:attribute>
 </t:nav-admin>	

@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "VEHICULO")
 public class Vehiculo{
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name= "ID")
@@ -28,16 +28,15 @@ public class Vehiculo{
 	private String patente;
 	@Column(name= "COLOR")
 	private String color;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "subastaVehiculo_id", referencedColumnName = "id")
 	private Subasta subastaVehiculo;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "VEHICULO_subCategoria", nullable = false)
 	private SubCategoriaV subCategoria;
-	
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -80,6 +79,4 @@ public class Vehiculo{
 	public void setSubCategoria(SubCategoriaV subCategoria) {
 		this.subCategoria = subCategoria;
 	}
-	
-	
 }

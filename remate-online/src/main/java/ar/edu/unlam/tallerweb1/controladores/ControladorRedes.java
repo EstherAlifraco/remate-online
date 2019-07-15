@@ -23,5 +23,4 @@ public class ControladorRedes {
         
         return new ModelAndView("nav-footer", model);
 	}
-
 }

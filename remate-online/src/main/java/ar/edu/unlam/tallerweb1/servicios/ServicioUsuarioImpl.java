@@ -14,10 +14,10 @@ import ar.edu.unlam.tallerweb1.modelo.Usuario;
 @Service("servicioUsuario")
 @Transactional
 public class ServicioUsuarioImpl implements ServicioUsuario{
-	
+
 	@Inject
 	private UsuarioDao servicioUsuarioDao;
-	
+
 	@SuppressWarnings("unused")
 	@Inject
 	private SubastaDao servicioSubastaDao;
@@ -36,34 +36,32 @@ public class ServicioUsuarioImpl implements ServicioUsuario{
 	public void nuevoUsuario(Usuario usuario) {
 		servicioUsuarioDao.nuevoUsuario(usuario);
 	}
-	
+
 	@Override
 	public Usuario consultarUsuario(Usuario usuario) {
 		return servicioUsuarioDao.consultarUsuario(usuario);
 	}
-	
+
 	@Override
 	public void guardarUsuario(Usuario usuario) {
 		servicioUsuarioDao.save(usuario);
 	}
-	
+
 	@Override
 	public List<Usuario> todosLosUsuarios() {
 		return servicioUsuarioDao.findAll();
 	}
-	
+
 	@Override
 	public List<Usuario> usuariosRol(String rol) {
-
 		return servicioUsuarioDao.usuariosRol(rol);
 	}
-	
+
 	@Override
 	public Usuario consultarUsuarioPorEmail(Usuario usuario) {
-
 		return servicioUsuarioDao.consultarUsuarioPorEmail(usuario);
 	}
-	
+
 	@Override
 	public void actualizarUsuario(Usuario usuario) {
 		servicioUsuarioDao.actualizarUsuario(usuario);
@@ -73,6 +71,4 @@ public class ServicioUsuarioImpl implements ServicioUsuario{
 	public void eliminarUsuario(Usuario usuario) {
 		servicioUsuarioDao.eliminarUsuario(usuario);
 	}
-
-
 }

@@ -29,7 +29,7 @@
 				</form:form>
 				
 				<div class="alert alert-warning">
-                 Si aun no te has registrado hazlo <a href="${url}/registro"><strong>AQUI</strong></a></div>
+                 Si aún no te has registrado hazlo <a href="${url}/registro"><strong>aquí</strong></a></div>
 				
 				<%--Bloque que es visible si el elemento error no estÃ¡ vacÃ­o	--%>
 				<c:if test="${not empty error}">

@@ -1,6 +1,5 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-
 import java.util.List;
 
 import javax.inject.Inject;
@@ -29,10 +28,8 @@ public class ControladorVehiculo {
 	@Inject
 	private ServicioVehiculo servicioVehiculo;
 	
-	
 	@Inject
 	private ServicioSubasta servicioSubasta;
-	
 	
 	@Inject
 	private ServicioSubCategoria servicioSubCategoria;
@@ -78,36 +75,26 @@ public class ControladorVehiculo {
 }*/
 	
 	@RequestMapping("/remate/vehiculoTipo")
-	public ModelAndView consultarTipo() {
-		
+	public ModelAndView consultarTipo() {	
 		ModelMap model =new ModelMap();
 		List<SubCategoriaV> subCategoriaList = servicioSubCategoria.consultarSubCategoriaV();
-	
 		model.put("subCategoriaList", subCategoriaList);
-		
 		return new ModelAndView ("subastaVehiculo/tipoVehiculo",model);
 	}
     
 	@RequestMapping(path="/vehiculos/{subVeId}")
 	public ModelAndView listaVehiculos(@PathVariable Long subVeId) {
-		
 		ModelMap model = new ModelMap();
 		List<Vehiculo> listaVehiculo = servicioVehiculo.consultarSubCategoria(subVeId);
-		
 		model.put("listaVehiculos", listaVehiculo);
-		
-		return new ModelAndView("subastaVehiculo/vehiculos", model);	
+		return new ModelAndView("subastaVehiculo/vehiculos", model);
    }
 	
 	@RequestMapping(path="/vehiculo/{id}")
 	public ModelAndView vehiculoSubasta(@PathVariable Long id) {
-		
 		ModelMap model = new ModelMap();
 		Vehiculo vehiculo = new Vehiculo();
-		
 		model.put("vehiculo", servicioVehiculo.getId(id));
-		
-		
 		return new ModelAndView("subastaVehiculo/vehiculo", model);	
    }
 }

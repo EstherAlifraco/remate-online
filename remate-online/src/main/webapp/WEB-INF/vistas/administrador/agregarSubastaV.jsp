@@ -33,7 +33,6 @@
 					<form:input type="text" required="required" class="form-control"
 						id="descripcion" path="descripcion" placeholder="descripcion" />
 				</div>
-			    
 
 				<div class="form-group col-md-12">
 					<label for="vehiculo">Vehiculo</label> <select	 id="id" name="id" class="form-control">
@@ -52,9 +51,7 @@
 		</div>
 	</form:form>
 </div>
-	
 
-			
 	</jsp:attribute>
 </t:nav-admin>	
 	

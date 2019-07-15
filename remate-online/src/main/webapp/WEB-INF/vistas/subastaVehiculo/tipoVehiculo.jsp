@@ -9,12 +9,12 @@
 	<jsp:attribute name="body">
 	<link href="${url}/css/clases.css" rel="stylesheet" >
 	    <br>
-	    <div class="titulo"><h1>VEHICULOS</h1>
+	    <div class="titulo"><h1>VEHÍCULOS</h1>
 	</div>
 	<br>
 	<br>
 
-							<label for="sel1">Seleccione Tipo de Vehiculo:</label>
+							<label for="sel1">Seleccione Tipo de Vehículo:</label>
 							<div class="form-group">
 							
 							<select	 id="subVeId" name="subVeId" class="form-control">
@@ -31,7 +31,7 @@
 						
 						<!-- pasamos el id por una funcion  -->
 						<button class="btn btn-lg btn-primary btn-block btn-info" style="color: white" onclick="ShowSelected()"
-						>Buscar Vehiculo </button>
+						>Buscar Vehículo </button>
 						
 	<script type="text/javascript">
 							function ShowSelected()
@@ -39,7 +39,7 @@
 							/* Para obtener el valor */
 							var sub = document.getElementById("subVeId").value;
 								if(sub == null || sub == 0){
-									alert('Para continuar es necesario que seleccione una especialidad  ¡GRACIAS!');
+									alert('Para continuar es necesario que seleccione una especialidad ¡Gracias!');
 								}
 								else{
 									location.href="${url}/vehiculos/"+sub;

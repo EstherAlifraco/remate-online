@@ -7,19 +7,19 @@ import ar.edu.unlam.tallerweb1.modelo.SubCategoriaOtro;
 import ar.edu.unlam.tallerweb1.modelo.SubCategoriaV;
 
 public interface ServicioSubCategoria {
-	
-List<SubCategoriaV> listarTiposVehiculos();
-	
+
+	List<SubCategoriaV> listarTiposVehiculos();
+
 	SubCategoriaV getId(Long subVeId);
-	
+
 	List<SubCategoriaV> consultarSubCategoriaV();
-	
+
 	SubCategoriaIn getIdIn(Long subInId);
-	
+
 	List<SubCategoriaIn> consultarSubCategoriaIn();
-	
+
 	List<SubCategoriaOtro> consultarSubCategoriaOtro();
-	
+
 	SubCategoriaOtro getIdOtro(Long subOtroId);
 
 }

@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "SUB_CATEGORIA_I")
 public class SubCategoriaIn {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name= "ID")
@@ -17,19 +18,19 @@ public class SubCategoriaIn {
 	@Column(name= "TIPO")
 	private String tipo;
 	
-	
 	public Long getSubInId() {
 		return subInId;
 	}
+	
 	public void setSubInId(Long subInId) {
 		this.subInId = subInId;
 	}
+	
 	public String getTipo() {
 		return tipo;
 	}
+	
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
-    
 }

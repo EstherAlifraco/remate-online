@@ -21,16 +21,16 @@ import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 
 @Controller
 public class ControladorABMOtro {
-	
+
 	@Inject
 	private ServicioUsuario servicioUsuario;
-	
+
 	@Inject
 	private ServicioOtro servicioOtro;
-	
+
 	@Inject
 	private ServicioSubCategoria servicioSubCategoria;
-	
+
 	@RequestMapping("abmOtro")
 	public ModelAndView abmOtro(HttpServletRequest request) {
 		Long idUsuario = (Long) request.getSession().getAttribute("idUsuario");
@@ -55,49 +55,43 @@ public class ControladorABMOtro {
 			if (servicioUsuario.buscarPorId(idUsuario).getRol().equals("admin")) {
 				Otro otro = new Otro();
 				List<SubCategoriaOtro> subCategoriaList = servicioSubCategoria.consultarSubCategoriaOtro();
-				
+
 				model.put("Otro", otro);
 				model.put("subCategoriaList", subCategoriaList);
 
 				return new ModelAndView("administrador/agregarOtro", model);
-				} 
-			else {
+			} else {
 				model.put("avisoError", "Acceso denegado");
 				model.put("mensajeError", "Para acceder usted debe tener rol ADMINISTRADOR");
-			return new ModelAndView("administrador/mensaje", model);}
-
-			} else {
-				return new ModelAndView("redirect:/login");
-			}
-		} 
-
+				return new ModelAndView("administrador/mensaje", model);}
+		} else {
+			return new ModelAndView("redirect:/login");
+		}
+	} 
 
 	@RequestMapping(path = "/guardarOtro", method = RequestMethod.POST)
 	public ModelAndView guardarOtro(@RequestParam("subOtroId") Long subOtroId,
-		 @ModelAttribute("Otro") Otro otro,
+			@ModelAttribute("Otro") Otro otro,
 			HttpServletRequest request) {
 		Long idAdmin = (Long) request.getSession().getAttribute("idUsuario");
 		ModelMap model = new ModelMap();
 		if (idAdmin != null) {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
 				otro.setSubCategoria(servicioSubCategoria.getIdOtro(subOtroId));
-					servicioOtro.guardarOtro(otro);
+				servicioOtro.guardarOtro(otro);
 
-					model.put("aviso", "Creacion Exitosa");
-					model.put("mensaje",
-							String.format("Se ha guardado con el id %d de manera exitosa", otro.getId()));
-					
-					return new ModelAndView("administrador/mensaje", model);
-				} 
-			else {
-					model.put("avisoError", "Creacion Fallida");
-					model.put("mensajeError", String.format("No se ah podido crear"));
-				}
+				model.put("aviso", "Creacion Exitosa");
+				model.put("mensaje",String.format("Se ha guardado con el id %d de manera exitosa", otro.getId()));
+
 				return new ModelAndView("administrador/mensaje", model);
 			} else {
-				return new ModelAndView("redirect:/login");
+				model.put("avisoError", "Creación fallida");
+				model.put("mensajeError", String.format("No se ha podido crear"));
 			}
-
+			return new ModelAndView("administrador/mensaje", model);
+		} else {
+			return new ModelAndView("redirect:/login");
+		}
 	}
 
 	@RequestMapping(path = "/actualizarOtro", method = RequestMethod.POST)
@@ -110,13 +104,12 @@ public class ControladorABMOtro {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
 				otro.setSubCategoria(servicioSubCategoria.getIdOtro(subOtroId));
 				servicioOtro.actualizarOtro(otro);
-				
+
 				model.put("aviso", "Actualizacion Exitosa");
 				model.put("mensaje", String.format("Otro con el id %d  se ha actualizado de manera exitosa",
 						otro.getId()));
 				return new ModelAndView("administrador/mensaje", model);
-			} 
-			else {
+			} else {
 				return new ModelAndView("redirect:/login");
 			}
 		} else {
@@ -151,28 +144,22 @@ public class ControladorABMOtro {
 		ModelMap model = new ModelMap();
 		if (idAdmin != null) {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
-				
 				Otro otro = servicioOtro.getId(idOtro);
 
-					servicioOtro.eliminarOtro(otro);
-					
-					model.put("aviso", "Eliminacion Exitosa");
-					model.put("mensaje", "Se ha eliminado de manera exitosa");
-			return new ModelAndView("administrador/mensaje", model);
-				}
-			else {
-					model.put("avisoError", "Eliminacion Cancelada");
-					model.put("mensajeError",
-							String.format("Otro con el id %d  no pudo eliminarse"));
+				servicioOtro.eliminarOtro(otro);
 
-				}return new ModelAndView("administrador/mensaje", model);
-		}
-				
-		     else {
-				return new ModelAndView("redirect:/login");
-			}
-		}
-	
+				model.put("aviso", "Eliminacion Exitosa");
+				model.put("mensaje", "Se ha eliminado de manera exitosa");
+				return new ModelAndView("administrador/mensaje", model);
+			} else {
+				model.put("avisoError", "Eliminacion Cancelada");
+				model.put("mensajeError",
+						String.format("Otro con el id %d  no pudo eliminarse"));
 
+			}return new ModelAndView("administrador/mensaje", model);
+		} else {
+			return new ModelAndView("redirect:/login");
+		}
+	}
 }
 

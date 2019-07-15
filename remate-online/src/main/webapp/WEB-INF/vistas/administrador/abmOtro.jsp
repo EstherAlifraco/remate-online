@@ -25,7 +25,6 @@
 						href="${url}/agregarSubastaOtro"><span
 						class="glyphicon glyphicon"></span> Agregar Subasta</a>
 						
-
 					<table class="table table-striped custab">
 						<thead>
 							<tr>
@@ -65,8 +64,6 @@
 					</table>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 </div>

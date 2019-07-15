@@ -15,49 +15,48 @@ import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
 @Transactional
 @SuppressWarnings("unused")
 public class ServicioVehiculoImpl implements ServicioVehiculo{
-	
+
 	@Inject
 	private VehiculoDao servicioVehiculoDao;
-	
+
 	@Inject
 	private SubastaDao servicioSubastaDao;
-	
+
 	@Override
-    public void guardarVehiculo(Vehiculo vehiculo) {
-    servicioVehiculoDao.save(vehiculo);
+	public void guardarVehiculo(Vehiculo vehiculo) {
+		servicioVehiculoDao.save(vehiculo);
 	}
 
 	@Override
 	public Vehiculo getId(Long id) {
-	return servicioVehiculoDao.getIdDao(id);
+		return servicioVehiculoDao.getIdDao(id);
 	}
-	
+
 	@Override
 	public List<Vehiculo> todosLosVehiculos(){
-	return servicioVehiculoDao.findAll();
+		return servicioVehiculoDao.findAll();
 	}
-	
+
 	@Override
 	public List<Vehiculo> mostrarVehiculos(){
 		return servicioVehiculoDao.mostrarVehiculosDao();
-		
 	}
-	
+
 	@Override
 	public List<Vehiculo> listarVehiculos() {
 		return servicioVehiculoDao.listarVehiculosDao();
 	}
-	
+
 	@Override
 	public List<Vehiculo> consultarSubCategoria(Long subVeId) {
 		return servicioVehiculoDao.consultarSubCategoriaDao(subVeId);
 	}
-	
+
 	@Override
 	public List<Vehiculo> getAll() {
 		return servicioVehiculoDao.getAll();
 	}
-	
+
 	@Override
 	public void actualizarVehiculo(Vehiculo vehiculo) {
 		servicioVehiculoDao.actualizarVehiculo(vehiculo);
@@ -67,11 +66,9 @@ public class ServicioVehiculoImpl implements ServicioVehiculo{
 	public void eliminarVehiculo(Vehiculo vehiculo) {
 		servicioVehiculoDao.eliminarVehiculo(vehiculo);
 	}
-	
+
 	@Override
 	public List <Vehiculo> consultarVehiculo() {
 		return servicioVehiculoDao.consultarVehiculoDao();
 	}
-
-	
 }

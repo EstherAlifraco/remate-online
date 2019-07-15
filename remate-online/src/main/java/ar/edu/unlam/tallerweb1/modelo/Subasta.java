@@ -1,48 +1,48 @@
 package ar.edu.unlam.tallerweb1.modelo;
-
-
 import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.*;
 
-
-
 @Entity
 @Table(name= "SUBASTA")
 public class Subasta {
-	 @Id
-	   @GeneratedValue(strategy=GenerationType.IDENTITY)
-	   @Column(name= "ID")
-	   private Long id;
-	   private java.sql.Date fecha =new java.sql.Date(System.currentTimeMillis());
-	   java.util.Date fechaCierre = new java.util.Date();
-	   
-	   @Column(name= "TIPO")
-	   private String tipo;
-	   @Column(name= "PRECIO_BASE")
-	   private Double precioBase;
-	   @Column(name= "PRECIO_CIERRE")
-	   private Double precioCierre;
-	   @Column(name= "DESCRIPCION")
-	   private String descripcion;
-	   
-	   @ManyToMany(cascade = CascadeType.ALL)
-	    @JoinTable(name = "subastaUsuario",
-	        joinColumns = {@JoinColumn(name = "subastaId", referencedColumnName = "id")},
-	        inverseJoinColumns = {@JoinColumn(name = "usuarioId", referencedColumnName = "id")})
-	    private Set<Usuario> usuario;
-	   
-	   @OneToOne
-	   private Vehiculo vehiculo;
-	   
-	   @OneToOne
-	   private Inmueble inmueble;
-	   
-	   @OneToOne
-	   private Otro otro;
-	 
-    
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name= "ID")
+	private Long id;
+	
+	private java.sql.Date fecha =new java.sql.Date(System.currentTimeMillis());
+	public java.util.Date fechaCierre = new java.util.Date();
+
+	@Column(name= "TIPO")
+	private String tipo;
+	
+	@Column(name= "PRECIO_BASE")
+	private Double precioBase;
+	
+	@Column(name= "PRECIO_CIERRE")
+	private Double precioCierre;
+	
+	@Column(name= "DESCRIPCION")
+	private String descripcion;
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "subastaUsuario",
+	joinColumns = {@JoinColumn(name = "subastaId", referencedColumnName = "id")},
+	inverseJoinColumns = {@JoinColumn(name = "usuarioId", referencedColumnName = "id")})
+	private Set<Usuario> usuario;
+
+	@OneToOne
+	private Vehiculo vehiculo;
+
+	@OneToOne
+	private Inmueble inmueble;
+
+	@OneToOne
+	private Otro otro;
+
 	public Long getId() {
 		return id;
 	}
@@ -50,8 +50,6 @@ public class Subasta {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	
 
 	public java.sql.Date getFecha() {
 		return fecha;
@@ -132,7 +130,4 @@ public class Subasta {
 	public void setOtro(Otro otro) {
 		this.otro = otro;
 	}
-	
-	
 }
-

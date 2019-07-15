@@ -30,7 +30,6 @@ public interface SubastaDao {
 	List<Subasta> consultarSubastaVeDao(Long subastaVeId);
 	
 	Subasta getIdDao(Long id);
-
-
+	
 }
 

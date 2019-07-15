@@ -56,9 +56,7 @@
 		</div>
 	</form:form>
 </div>
-	
 
-			
 	</jsp:attribute>
 </t:nav-admin>	
 	

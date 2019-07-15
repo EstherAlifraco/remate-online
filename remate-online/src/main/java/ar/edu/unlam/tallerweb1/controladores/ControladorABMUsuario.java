@@ -16,11 +16,10 @@ import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 
 @Controller
 public class ControladorABMUsuario {
-	
+
 	@Inject
 	private ServicioUsuario servicioUsuario;
-	
-	
+
 	@RequestMapping("/abmUsuario")
 	public ModelAndView abmUsuario(HttpServletRequest request) {
 		Long idUsuario = (Long) request.getSession().getAttribute("idUsuario");
@@ -51,7 +50,6 @@ public class ControladorABMUsuario {
 			} else {
 				return new ModelAndView("redirect:/login");
 			}
-
 		} else {
 			return new ModelAndView("redirect:/login");
 		}
@@ -66,27 +64,19 @@ public class ControladorABMUsuario {
 				if (servicioUsuario.consultarUsuarioPorEmail(usuario) == null) {
 					servicioUsuario.nuevoUsuario(usuario);
 					model.put("usuario", usuario);
-					
 					model.put("aviso", "Creacion Exitosa");
-					model.put("mensaje",
-							String.format("Se ha creado el usuario con el id %d de manera exitosa", usuario.getId()));
-					
-					return new ModelAndView("administrador/mensaje", model);
-				} 
-			else {
+					model.put("mensaje",String.format("Se ha creado el usuario con el id %d de manera exitosa", usuario.getId()));
+				} else {
 					model.put("avisoError", "El E-mail ya se encuentra en uso");
 					model.put("mensajeError", String.format("Otro usuario ya está usando este correo: %s", usuario.getEmail()));
 				}
 				return new ModelAndView("administrador/mensaje", model);
-			} 
-			else {
+			} else {
 				return new ModelAndView("redirect:/login");
 			}
-		}
-		else {
+		} else {
 			return new ModelAndView("redirect:/login");
 		}
-
 	}
 
 	@RequestMapping("/modificarUsuario")
@@ -116,28 +106,19 @@ public class ControladorABMUsuario {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
 				if (servicioUsuario.consultarUsuarioPorEmail(usuario) == null) {
 					servicioUsuario.actualizarUsuario(usuario);
-					
-
 					model.put("aviso", "Creacion Exitosa");
-					model.put("mensaje",
-							String.format("Se ha creado el usuario con el id %d de manera exitosa", usuario.getId()));
-					
-					return new ModelAndView("administrador/mensaje", model);
-				} 
-			else {
+					model.put("mensaje",String.format("Se ha creado el usuario con el id %d de manera exitosa", usuario.getId()));
+				} else {
 					model.put("avisoError", "El E-mail ya se encuentra en uso");
 					model.put("mensajeError", String.format("Otro usuario ya está usando este correo: %s", usuario.getEmail()));
 				}
 				return new ModelAndView("administrador/mensaje", model);
-			} 
-			else {
+			} else {
 				return new ModelAndView("redirect:/login");
 			}
-		}
-		else {
+		} else {
 			return new ModelAndView("redirect:/login");
 		}
-
 	}
 
 
@@ -150,7 +131,6 @@ public class ControladorABMUsuario {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
 				Usuario usuario = servicioUsuario.buscarPorId(idUsuario);
 				servicioUsuario.eliminarUsuario(usuario);
-				
 				model.put("aviso", "Eliminacion Exitosa");
 				model.put("mensaje",
 						String.format("El usuario se ha eliminado de manera exitosa", usuario.getId()));
@@ -162,5 +142,4 @@ public class ControladorABMUsuario {
 			return new ModelAndView("redirect:/login");
 		}
 	}
-
 }

@@ -19,47 +19,45 @@ import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
 @SuppressWarnings("unused")
 @Transactional
 public class ServicioSubCategoriaImpl implements ServicioSubCategoria {
-	
+
 	@Inject
 	private SubCategoriaDao servicioSubCategoriaDao;
-	
+
 	@Inject
 	private VehiculoDao servicioVehiculoDao;
-	
+
 	@Override
 	public List<SubCategoriaV> listarTiposVehiculos() {
 		return servicioSubCategoriaDao.listarTiposVehiculos();
 	}
-	
+
 	@Override
 	public SubCategoriaV getId(Long subVeId) {
 		return servicioSubCategoriaDao.getIdDao(subVeId);
 	}
-	
+
 	@Override
 	public List<SubCategoriaV> consultarSubCategoriaV(){
 		return servicioSubCategoriaDao.consultarSubCategoriaVDao();
 	}
-	
+
 	@Override
 	public SubCategoriaIn getIdIn(Long subInId) {
 		return servicioSubCategoriaDao.getIdInDao(subInId);
 	}
-	
+
 	@Override
 	public List<SubCategoriaIn> consultarSubCategoriaIn(){
 		return servicioSubCategoriaDao.consultarSubCategoriaInDao();
 	}
-	
+
 	@Override
 	public List<SubCategoriaOtro> consultarSubCategoriaOtro(){
 		return servicioSubCategoriaDao.consultarSubCategoriaOtroDao();
 	}
-	
+
 	@Override
 	public SubCategoriaOtro getIdOtro(Long subOtroId) {
 		return servicioSubCategoriaDao.getIdOtroDao(subOtroId);
 	}
-
 }
-

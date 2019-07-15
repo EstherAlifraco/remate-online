@@ -35,7 +35,6 @@
 				</div>
 				</div>
 
-
 			<div class="form-group col-md-12">
 				<label for="password">Rol</label> <select name="rol" id="rol"
 					class="form-group ">
@@ -48,7 +47,6 @@
 	</form:form>
 </div>
 
-			
 	</jsp:attribute>
 </t:nav-admin>	
 	

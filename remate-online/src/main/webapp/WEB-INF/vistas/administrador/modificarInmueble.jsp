@@ -46,8 +46,6 @@
 					<form:input type="text" required="required" class="form-control"
 						id="ciudad" name="ciudad" path="ciudad" />
 				</div>
-				
-
 
 				<div class="form-group col-md-12">
 					<label for="tipovehiculo">Tipo del Inmueble</label> <select	 id="subInId" name="subInId" class="form-control">

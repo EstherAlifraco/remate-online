@@ -33,10 +33,8 @@
 						name="password">
 				</div>
 				</div>
-
 			<input type="submit"  class="btn btn-lg btn-block btn-info" style= "color:white"
-					value="Actualizar Usuario">
-	
+					value="Actualizar Usuario">	
 	</form:form>
 </div>
 

@@ -42,7 +42,6 @@
 								
 							</select>
 				</div>
-			    
 
 				<input type="submit" class="btn btn-lg btn-block btn-info" style= "color:white"
 					value="Guardar Subasta">

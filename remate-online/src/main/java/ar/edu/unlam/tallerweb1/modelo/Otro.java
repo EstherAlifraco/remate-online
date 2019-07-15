@@ -15,24 +15,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "OTRO")
 public class Otro {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name= "ID")
 	private Long id;
+
 	@Column(name= "NOMBRE")
 	private String nombre;
+
 	@Column(name="DESCRIPCION")
 	private String descripcion;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "subastaOtro_id", referencedColumnName = "id")
 	private Subasta subastaOtro;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "OTRO_subCategoria", nullable = false)
 	private SubCategoriaOtro subCategoria;
-
 
 	public Long getId() {
 		return id;
@@ -73,6 +74,4 @@ public class Otro {
 	public void setSubCategoria(SubCategoriaOtro subCategoria) {
 		this.subCategoria = subCategoria;
 	}
-	
 }
-

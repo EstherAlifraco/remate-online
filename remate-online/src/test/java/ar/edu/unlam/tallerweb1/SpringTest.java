@@ -15,13 +15,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 // Clase base para los test que se pretende que se corran dentro del contexto de spring
 public abstract class SpringTest {
 
-    // Tiene inyectado el session factory para que los test que hereden de éste tengan acceso al mismo
-    @Inject
-    private SessionFactory sessionFactory;
+	// Tiene inyectado el session factory para que los test que hereden de éste tengan acceso al mismo
+	@Inject
+	private SessionFactory sessionFactory;
 
-    // Metodo para obtener una sesion de base de datos
-    protected Session getSession() {
-        return this.sessionFactory.getCurrentSession();
-    }
+	// Metodo para obtener una sesion de base de datos
+	protected Session getSession() {
+		return this.sessionFactory.getCurrentSession();
+	}
 
 }

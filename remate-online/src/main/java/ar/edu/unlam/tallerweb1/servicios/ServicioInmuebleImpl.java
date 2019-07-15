@@ -17,33 +17,33 @@ import ar.edu.unlam.tallerweb1.modelo.Vehiculo;
 @Transactional
 @SuppressWarnings("unused")
 public class ServicioInmuebleImpl implements ServicioInmueble{
-	
+
 	@Inject
 	private InmuebleDao servicioInmuebleDao;
-	
+
 	@Inject
 	private SubastaDao servicioSubastaDao;
-	
+
 	@Override
 	public Inmueble getId(Long id) {
-	return servicioInmuebleDao.getIdDao(id);
+		return servicioInmuebleDao.getIdDao(id);
 	}
-	
+
 	@Override
 	public List<Inmueble> consultarSubCategoria(Long subInId) {
 		return servicioInmuebleDao.consultarSubCategoriaDao(subInId);
 	}
-	
+
 	@Override
-    public void guardarInmueble(Inmueble inmueble) {
-    servicioInmuebleDao.save(inmueble);
+	public void guardarInmueble(Inmueble inmueble) {
+		servicioInmuebleDao.save(inmueble);
 	}
-	
+
 	@Override
 	public List<Inmueble> getAll() {
 		return servicioInmuebleDao.getAllDao();
 	}
-	
+
 	@Override
 	public void actualizarInmueble(Inmueble inmueble) {
 		servicioInmuebleDao.actualizarInmuebleDao(inmueble);
@@ -53,12 +53,11 @@ public class ServicioInmuebleImpl implements ServicioInmueble{
 	public void eliminarInmueble(Inmueble inmueble) {
 		servicioInmuebleDao.eliminarInmuebleDao(inmueble);
 	}
-	
+
 	@Override
 	public List <Inmueble> consultarSubasta(Long subastaId) {
 		return servicioInmuebleDao.consultarSubastaDao(subastaId);
 	}
-	
 
 	@Override
 	public List <Inmueble> consultarInmueble() {

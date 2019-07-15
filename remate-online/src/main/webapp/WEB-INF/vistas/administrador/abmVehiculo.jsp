@@ -16,10 +16,10 @@
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-12">
-					<h1>Lista de Vehiculos</h1>
+					<h1>Lista de Vehículos</h1>
 					<a class="btn btn-default btn-circle"
 						href="${url}/agregarVehiculo"><span
-						class="glyphicon glyphicon"></span> Agregar Vehiculo</a>
+						class="glyphicon glyphicon"></span> Agregar Vehículo</a>
 						
 					<a class="btn btn-default btn-circle"
 						href="${url}/agregarSubastaV"><span

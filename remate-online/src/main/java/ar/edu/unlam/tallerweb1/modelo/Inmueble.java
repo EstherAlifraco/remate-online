@@ -27,13 +27,13 @@ public class Inmueble {
 	private int habitaciones;
 	@Column(name="LOCALIDAD")
 	private String localidad;
-    @Column(name="CIUDAD")
-    private String ciudad;
-	
-    @OneToOne(cascade = CascadeType.ALL)
+	@Column(name="CIUDAD")
+	private String ciudad;
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "subastaInmueble_id", referencedColumnName = "id")
 	private Subasta subastaInmueble;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "INMUEBLE_subCategoria", nullable = false)
 	private SubCategoriaIn subCategoria;
@@ -101,6 +101,4 @@ public class Inmueble {
 	public void setSubCategoria(SubCategoriaIn subCategoria) {
 		this.subCategoria = subCategoria;
 	}
-	
 }
-

@@ -39,7 +39,7 @@
 							/* Para obtener el valor */
 							var sub = document.getElementById("subInId").value;
 								if(sub == null || sub == 0){
-									alert('Para continuar es necesario que seleccione una especialidad  ¡GRACIAS!');
+									alert('Para continuar es necesario que seleccione una especialidad ¡Gracias!');
 								}
 								else{
 									location.href="${url}/inmuebles/"+sub;

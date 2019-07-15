@@ -25,7 +25,7 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 
 	@Inject
 	private UsuarioDao servicioUsuarioDao;
-	
+
 	@Inject
 	private VehiculoDao servicioVehiculoDao;
 
@@ -33,38 +33,37 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 	public void guardarSubasta(Subasta subasta) {
 		servicioSubastaDao.save(subasta);
 	}
-	
+
 	@Override
 	public Subasta getSubastaId(Long id) {
 		return servicioSubastaDao.getSubastaId(id);
-
 	}
 
 	@Override
 	public List<Subasta> todosLasSubastas() {
 		return servicioSubastaDao.findAll();
 	}
-	
+
 	@Override
 	public Subasta consultarSubastaV(Long id) {
 		return servicioSubastaDao.consultarSubastaVDao(id);
 	}
-	
+
 	@Override
 	public Subasta consultarSubastaO(Long id) {
 		return servicioSubastaDao.consultarSubastaODao(id);
 	}
-	
+
 	@Override
 	public Subasta consultarSubastaIn(Long id) {
 		return servicioSubastaDao.consultarSubastaInDao(id);
 	}
-	
+
 	@Override
 	public List<Subasta> getAll() {
 		return servicioSubastaDao.getAll();
 	}
-	
+
 	@Override
 	public void actualizarSubasta(Subasta subasta) {
 		servicioSubastaDao.actualizarSubasta(subasta);
@@ -74,16 +73,14 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 	public void eliminarSubasta(Subasta subasta) {
 		servicioSubastaDao.eliminarSubasta(subasta);
 	}
-	
+
 	@Override
 	public List<Subasta> consultarVehiculo(Long subastaVeId) {
 		return servicioSubastaDao.consultarSubastaVeDao(subastaVeId);
 	}
-	
+
 	@Override
 	public Subasta getId(Long id) {
-	return servicioSubastaDao.getIdDao(id);
+		return servicioSubastaDao.getIdDao(id);
 	}
-
-	
 }

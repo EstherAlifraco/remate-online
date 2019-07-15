@@ -27,4 +27,3 @@ public interface VehiculoDao {
 	List<Vehiculo> consultarVehiculoDao();
 
 }
-

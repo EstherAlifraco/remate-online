@@ -26,16 +26,16 @@ import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.*;
 
 public class UsuarioMockitoTest extends SpringTest{
-	
+
 	@Mock
 	private ServicioUsuario servicioLogin;
 
 	@Mock
 	private Usuario usuario;
-	
+
 	@Mock
 	private HttpServletRequest request;
-	
+
 	@Mock
 	private HttpSession session;
 
@@ -44,7 +44,7 @@ public class UsuarioMockitoTest extends SpringTest{
 	private Usuario usuario1 , usuario2;
 	private List<Usuario> listaDeUsuarios;
 	private Session sesion;
-	
+
 	@Before
 	public void inyeccionDeMocksInicializada() {
 		MockitoAnnotations.initMocks(this);
@@ -55,7 +55,7 @@ public class UsuarioMockitoTest extends SpringTest{
 		sesion = getSession();
 		listaDeUsuarios = new ArrayList<Usuario>();
 	}
-	
+
 	@Test
 	public void testQueVerificaQueElLoginSeaValido() {
 		when(request.getSession()).thenReturn(session);
@@ -63,13 +63,11 @@ public class UsuarioMockitoTest extends SpringTest{
 		when(usuario.getId()).thenReturn(1L);
 		when(usuario.getNombre()).thenReturn("Marcelo");
 		when(usuario.getPassword()).thenReturn("123456");
-		
-		ModelAndView modelo = controladorLogin.irALogin();
 
+		ModelAndView modelo = controladorLogin.irALogin();
 		assertThat(modelo.getModel()).isNotEmpty();
-				
 	}
-	
+
 	@Test
 	public void testQueVerificaQueHayaCerradoSesionCorrectamente() {
 		when(request.getSession()).thenReturn(session);
@@ -77,24 +75,19 @@ public class UsuarioMockitoTest extends SpringTest{
 		when(usuario.getId()).thenReturn(1L);
 		when(usuario.getNombre()).thenReturn("Marcelo");
 		when(usuario.getPassword()).thenReturn("123456");
-		
+
 		ModelAndView modelo = controladorLogin.cerrarSession(request);
-		
 		assertThat(modelo.getModel()).isEmpty();
-		
 		verify(session , times(0)).setAttribute("UsuarioId", 1L);
-	
 	}
-	
+
 	@Test
 	public void testQueVerificaQueHayaCerradoSesionIncorrectamente() {
 		when(request.getSession()).thenReturn(session);
 		when(servicioLogin.consultarUsuario(any(Usuario.class))).thenReturn(usuario);
-		
+
 		ModelAndView modelo = controladorLogin.cerrarSession(request);
-		
 		assertThat(modelo.getModel().get("aviso")).isEqualTo(null);
-	
 	}
 
 	@Test
@@ -103,15 +96,12 @@ public class UsuarioMockitoTest extends SpringTest{
 		when(servicioLogin.consultarUsuario(any(Usuario.class))).thenReturn(usuario);
 		when(usuario.getNombre()).thenReturn("Marcelo");
 		when(usuario.getPassword()).thenReturn("123456");
-		
+
 		ModelAndView modelo = controladorLogin.registrarUsuario(usuario, request);
-		
 		assertThat(modelo.getModel().get("error")).isEqualTo(null);
-		
 		verify(session , times(0)).setAttribute("nombre", "Marcelo");
 	}
 
-	
 	@SuppressWarnings("unlikely-arg-type")
 	@Test
 	@Transactional
@@ -119,17 +109,16 @@ public class UsuarioMockitoTest extends SpringTest{
 	public void testQueAlPasarUsuarioYPasswordNoValidoLlevaAlIndex() {
 		Usuario primerUsuario = mock(Usuario.class);
 		ServicioUsuario servicioLogin = mock(ServicioUsuario.class);
-		
+
 		when(primerUsuario.getNombre()).thenReturn("Marcelo");
 		when(primerUsuario.getPassword()).thenReturn("mock");
 		when(servicioLogin.consultarUsuario(any(Usuario.class))).thenReturn(primerUsuario);
-		
+
 		ControladorUsuario controladorLogin = new ControladorUsuario();
-		
 		assertThat(controladorLogin.irAHome().equals(primerUsuario)).isNotNull();
-		
-    }
-	
+
+	}
+
 	@Test(expected = Exception.class)
 	@Transactional
 	@Rollback(true)
@@ -137,72 +126,66 @@ public class UsuarioMockitoTest extends SpringTest{
 	public void testQueAlCrearUsuarioSiYaExisteDevuelvaError() throws Exception {
 		usuario1.setNombre("Marcelo");
 		usuario1.setPassword("123456");
-		
+
 		usuario2.setNombre("Marcelo");
 		usuario2.setPassword("123456");
-		
+
 		if(this.usuario1.getNombre().equals(this.usuario2.getNombre()) || this.usuario1.getPassword().equals(this.usuario2.getPassword())) {
 			throw new Exception("Ya existe un usuario con ese email , por favor elija otro");
 		} else {
 			System.out.println("Usuario valido");
 		}
-		
+
 		getSession().save(usuario1);
 		getSession().save(usuario2);
-		
-		
+
 		listaDeUsuarios = sesion.createCriteria(Usuario.class)
-						  .add(Restrictions.and(Restrictions.eq("nombre", "nombre"),
-								  Restrictions.eq("pass", "pass")))
-						  .list();
-		
+				.add(Restrictions.and(Restrictions.eq("nombre", "nombre"),
+						Restrictions.eq("pass", "pass")))
+				.list();
 		assertThat(listaDeUsuarios.get(0).getNombre()).isEqualTo(usuario1.getNombre()).isNotNull();
 		assertThat(listaDeUsuarios).hasSize(1);
 	}
-	
-	
+
 	@Test(expected = Exception.class)
 	@Transactional
 	@Rollback(true)
 	@SuppressWarnings("unchecked")
 	public void testQueElUsuarioNoEscribaSuPasswordYDevuelvaError() throws Exception {
+		
 		usuario1.setNombre("Marcelo");
 		usuario1.setPassword(null);
-		
+
 		if(this.usuario1.getPassword() == null) {
 			throw new Exception("Por favor escriba una contraseña");
 		} else {
 			this.usuario1.getPassword();
 		}
-		
+
 		getSession().save(usuario1);
-		
+
 		listaDeUsuarios = sesion.createCriteria(Usuario.class)
-							.add(Restrictions.isNull("pass"))
-							.list();
-		
+				.add(Restrictions.isNull("pass"))
+				.list();
+
 		assertThat(listaDeUsuarios.get(0).getPassword()).isNull();
 		assertThat(listaDeUsuarios).hasSize(1);
-			
 	}
-	
-	
+
 	@Test(expected = Exception.class)
 	@Transactional
 	@Rollback(true)
 	public void testQueElUsuarioEscribaSuPasswordDeFormaIncorrectaYDevuelvaError() throws Exception{
+		
 		usuario1.setNombre("Marcelo");
 		usuario1.setPassword("123456");
-		
+
 		if(this.usuario1.getPassword().equals(this.usuario1.getPassword())) {
 			throw new Exception("password incorrecta");
 		} else {
 			this.usuario1.getPassword();
 		}
-		
+
 		getSession().save(usuario1);
-		
 	}
-
 }
-
