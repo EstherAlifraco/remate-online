@@ -42,8 +42,10 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public Usuario consultarUsuario(Usuario usuario) {
-		return (Usuario) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
-				.add(Restrictions.eq("nombre", usuario.getNombre()))
+		final Session session = sessionFactory.getCurrentSession();
+		return (Usuario) session.createCriteria(Usuario.class)
+				.add(Restrictions.eq("email", usuario.getEmail()))
+				.add(Restrictions.eq("password", usuario.getPassword()))
 				.uniqueResult();
 	}
 
@@ -68,7 +70,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	@Override // Se cambio "sessionFactory.getCurrentSession()" por "session"
 	public Usuario consultarUsuarioPorEmail(Usuario usuario) {
 		final Session session = sessionFactory.getCurrentSession();
-		return (Usuario) session.createCriteria(Usuario.class)
+		return (Usuario) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
 				.add(Restrictions.eq("email", usuario.getEmail())).uniqueResult();
 	}
 
