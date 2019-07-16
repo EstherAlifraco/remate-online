@@ -18,10 +18,10 @@
 	<label for="email">Email:</label>
 	<form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />
 	<br>
-	<label for="email">Nombre</label>
+	<label for="nombre">Nombre</label>
 	<form:input path="nombre" id="nombre" type="test" class="form-control" placeholder="Nombre" />
 	<br>
-	<label for="pass">Password:</label>
+	<label for="password">Password:</label>
 	<form:input path="password" id="password"  type="pass" class="form-control" placeholder="Password" /><br>
 	
 	<button class="btn btn-lg btn-block btn-info" Type="Submit"> Guardar </button>

@@ -21,7 +21,7 @@
 					<label for="email">Email:</label>
 					<form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />
 					<br>
-					<label for="email">Password:</label>
+					<label for="password">Password:</label>
 					<form:input path="password" type="password" id="password" class="form-control" placeholder="Password" />     		  
 					<br>
 					<button class="btn btn-lg btn-block btn-info" style="color: white" Type="Submit"> Ingresar</button>
