@@ -1,8 +1,3 @@
-create database db;
-#drop database db;
-
-use db;
-
 INSERT INTO SUB_CATEGORIA(ID, TIPO)
 VALUES  (1, 'PICK UP'),
 		(2, 'UTILITARIO'),
@@ -23,30 +18,31 @@ VALUES  (10, 'ELECTRODOMESTICOS'),
         (12, 'ANTIGÛEDADES'),
         (13, 'DECORACION');        
         
-INSERT INTO SUBASTA(ID, fechaInicio, fechaCierre, PRECIO_BASE, DESCRIPCION)
-VALUES  (300, '2019-06-20 10:00:00', '2019-06-30 11:00:00', 60000, 'Vehiculo en excelente estado'),
-        (301, '2019-06-10 08:30:00', '2019-07-15 14:00:00', 40000, 'Vehiculo con problemas en el motor'),
-        (302, '2019-06-25 15:00:00', '2019-07-22 06:00:00', 80000, 'Vehiculo en excelente estado'),
-		(303, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 120000, 'Vehiculo en optimo estado'),
-        (310, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (311, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 900000, 'Excelente estado'),
-        (312, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (313, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (314, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (315, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (316, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (317, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (318, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (319, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (320, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 800000, 'Excelente estado'),
-        (321, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 4000, 'Excelente estado'),
-        (322, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 16000, 'Excelente estado'),
-        (323, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 50000, 'Excelente estado'),
-        (324, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 1500, 'Excelente estado'),
-        (325, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 4500, 'Excelente estado'),
-        (326, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 12000, 'Excelente estado'),
-        (327, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 600, 'Excelente estado'),
-        (328, '2019-06-12 18:00:00', '2019-07-15 14:00:00', 900, 'Excelente estado');
+INSERT INTO SUBASTA(ID, fechaCierre, PRECIO_BASE, DESCRIPCION)
+VALUES  (300, '2019-07-25 13:00:00', 60000, 'Vehiculo en excelente estado'),
+        (301, '2019-07-25 13:00:00', 40000, 'Vehiculo con problemas en el motor'),
+        (302, '2019-07-25 13:00:00', 80000, 'Vehiculo en excelente estado'),
+		(303, '2019-07-25 13:00:00', 120000, 'Vehiculo en optimo estado'),
+        (310, '2019-07-25 13:00:00', 800000, 'Excelente estado'),
+        (311, '2019-07-25 13:00:00', 900000, 'Excelente estado'),
+        (312, '2019-07-25 13:00:00', 800000, 'Excelente estado'),
+        (313, '2019-07-25 13:00:00', 800000, 'Excelente estado'),
+        (314, '2019-07-25 13:00:00', 800000, 'Excelente estado'),
+        (315, '2019-07-26 13:00:00', 800000, 'Excelente estado'),
+        (316, '2019-07-16 13:00:00', 800000, 'Excelente estado'),
+        (317, '2019-07-16 13:00:00', 800000, 'Excelente estado'),
+        (318, '2019-07-16 13:00:00', 800000, 'Excelente estado'),
+        (319, '2019-07-16 13:00:00', 800000, 'Excelente estado'),
+        (320, '2019-07-16 13:00:00', 800000, 'Excelente estado'),
+        (321, '2019-07-16 13:00:00', 4000, 'Excelente estado'),
+        (322, '2019-07-16 13:00:00', 16000, 'Excelente estado'),
+        (323, '2019-07-16 13:00:00', 50000, 'Excelente estado'),
+        (324, '2019-07-16 13:00:00', 1500, 'Excelente estado'),
+        (325, '2019-07-16 13:00:00', 4500, 'Excelente estado'),
+        (326, '2019-07-16 13:00:00', 12000, 'Excelente estado'),
+        (327, '2019-07-16 13:00:00', 600, 'Excelente estado'),
+        (328, '2019-07-16 13:00:00', 900, 'Excelente estado');
+        
         
 INSERT INTO VEHICULO(ID, MARCA, MODELO, PATENTE, COLOR, VEHICULO_subCategoria, subastaVehiculo_ID)
 VALUES (101, 'M20-RAM', '2015', 'PAA 254', 'AZUL', 1, 300),
@@ -82,4 +78,3 @@ VALUES  (200,'usuario2@gmail.com','456','cliente','est'),
 		(202,'admin@gmail.com','111','admin','administrador'),
 		(203,'cli@gmail.com','222','cliente','pauly'); 
         
-       select * from vehiculo; 
