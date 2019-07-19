@@ -20,10 +20,7 @@
 					<a class="btn btn-default btn-circle"
 						href="${url}/agregarVehiculo"><span
 						class="glyphicon glyphicon"></span> Agregar Vehículo</a>
-						
-					<a class="btn btn-default btn-circle"
-						href="${url}/agregarSubastaV"><span
-						class="glyphicon glyphicon"></span> Agregar Subasta</a>
+
 
 					<table class="table table-striped custab">
 						<thead>
@@ -62,6 +59,10 @@
 										class="btn btn-default btn-circle"
 										href="${url}/eliminarVehiculo?idVehiculo=${v.getId()}"><span
 											class="glyphicon glyphicon-trash"></span> </a></td>
+										<td><c:out value="" /> <a
+										class="btn btn-default btn-circle"
+										href="${url}/agregarSubastaV?idVehiculo=${v.getId()}"><span
+											class="glyphicon glyphicon">Agregar Subasta</span> </a></td>	
 								</tr>
 							</c:forEach>
 						</tbody>
