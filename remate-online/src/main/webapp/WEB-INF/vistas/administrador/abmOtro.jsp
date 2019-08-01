@@ -21,10 +21,8 @@
 						href="${url}/agregarOtro"><span
 						class="glyphicon glyphicon"></span> Agregar Otro</a>
 						
-						<a class="btn btn-default btn-circle"
-						href="${url}/agregarSubastaOtro"><span
-						class="glyphicon glyphicon"></span> Agregar Subasta</a>
 						
+
 					<table class="table table-striped custab">
 						<thead>
 							<tr>
@@ -58,12 +56,18 @@
 										class="btn btn-default btn-circle"
 										href="${url}/eliminarOtro?idOtro=${o.getId()}"><span
 											class="glyphicon glyphicon-trash"></span> </a></td>
+											<td><c:out value="" /> <a
+										class="btn btn-default btn-circle"
+										href="${url}/agregarSubastaOtro?idOtro=${o.getId()}"><span
+											class="glyphicon glyphicon">Agregar Subasta</span> </a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 			</div>
+
+
 		</div>
 	</div>
 </div>

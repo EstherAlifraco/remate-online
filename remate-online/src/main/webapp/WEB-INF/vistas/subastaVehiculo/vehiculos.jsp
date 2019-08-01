@@ -29,6 +29,7 @@
 									<th scope="col">Modelo</th>
 									<th scope="col">Patente</th>
 									<th scope="col">Color</th>
+									<th scope="col">N° de Subasta</th>
 									
 								</tr>
 							</thead>
@@ -40,7 +41,8 @@
 										<td><c:out value="${ve.modelo}" /></td>
 										<td><c:out value="${ve.patente}" /></td>
 										<td><c:out value="${ve.color}" /></td>
-										<td><a class="boton_personalizado_remate" href="${url}/vehiculo/<c:out value="${ve.id}" />"> Ingresar</a></td>
+										<td><c:out value="${ve.subastaVehiculo.id}" /></td>
+										<td><a class="boton_personalizado_remate" href="${url}/vehiculo/<c:out value="${ve.id}/ ${ve.subastaVehiculo.id }" />"> Ingresar</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

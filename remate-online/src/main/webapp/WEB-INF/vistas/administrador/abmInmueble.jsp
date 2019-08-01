@@ -20,10 +20,7 @@
 					<a class="btn btn-default btn-circle"
 						href="${url}/agregarInmueble"><span
 						class="glyphicon glyphicon"></span> Agregar Inmueble</a>
-						
-						<a class="btn btn-default btn-circle"
-						href="${url}/agregarSubastaIn"><span
-						class="glyphicon glyphicon"></span> Agregar Subasta</a>
+
 						
 
 					<table class="table table-striped custab">
@@ -64,6 +61,10 @@
 										class="btn btn-default btn-circle"
 										href="${url}/eliminarInmueble?idInmueble=${i.getId()}"><span
 											class="glyphicon glyphicon-trash"></span> </a></td>
+											<td><c:out value="" /> <a
+										class="btn btn-default btn-circle"
+										href="${url}/agregarSubastaIn?idInmueble=${i.getId()}"><span
+											class="glyphicon glyphicon">Agregar Subasta</span> </a></td>
 								</tr>
 							</c:forEach>
 							
@@ -71,6 +72,8 @@
 					</table>
 				</div>
 			</div>
+
+
 		</div>
 	</div>
 </div>

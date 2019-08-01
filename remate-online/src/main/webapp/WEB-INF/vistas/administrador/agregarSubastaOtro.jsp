@@ -12,7 +12,7 @@
 	<br>
 	<div class="container">
 	<h1>Agregar Subasta</h1>
-	<form:form action="guardarSubastaOtro" modelAttribute="subasta" method="POST">
+	<form:form action="guardarSubastaOtro?idOtro=${otro.getId()}" modelAttribute="subasta" method="POST">
 		<div class="form-row">
 			<div class="form-group col-md-12">
 		<!-- 	    <div class="form-group col-md-12">
@@ -53,6 +53,8 @@
 	</form:form>
 </div>
 	
+
+			
 	</jsp:attribute>
 </t:nav-admin>	
 	

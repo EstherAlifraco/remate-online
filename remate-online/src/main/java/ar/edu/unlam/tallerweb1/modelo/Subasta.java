@@ -20,7 +20,7 @@ public class Subasta {
 	private String tipo;
 	
 	@Column(name= "PRECIO_BASE")
-	private Double precioBase;
+	private Double precioBase = 0.00D;
 	
 	@Column(name= "PRECIO_CIERRE")
 	private Double precioCierre;

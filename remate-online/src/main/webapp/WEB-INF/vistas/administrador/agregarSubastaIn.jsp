@@ -10,7 +10,7 @@
 	<jsp:attribute name="body">
 <div class="container">
 	<h1>Agregar Subasta</h1>
-	<form:form action="guardarSubastaIn" modelAttribute= "subasta" method="POST">
+	<form:form action="guardarSubastaIn?idInmueble=${inmueble.getId()}" modelAttribute= "subasta" method="POST">
 		<div class="form-row">
 			<div class="form-group col-md-12">
 		<!-- 	    <div class="form-group col-md-12">
@@ -42,6 +42,7 @@
 								
 							</select>
 				</div>
+			    
 
 				<input type="submit" class="btn btn-lg btn-block btn-info" style= "color:white"
 					value="Guardar Subasta">

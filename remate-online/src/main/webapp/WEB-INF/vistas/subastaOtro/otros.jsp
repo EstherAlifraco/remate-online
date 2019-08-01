@@ -26,6 +26,7 @@
 								<tr>									
 									<th scope="col">Nombre</th>
 									<th scope="col">Descripción</th>
+									<th scope="col">N° de Subasta</th>
 									
 								</tr>
 							</thead>
@@ -34,7 +35,8 @@
 									<tr>
 										<td><c:out value="${otro.nombre}" /></td>	
 										<td><c:out value="${otro.descripcion}" /></td>
-										<td><a class="boton_personalizado_remate" href="${url}/otro/<c:out value="${otro.id}" />"> Ingresar</a></td>
+										<td><c:out value="${otro.subastaOtro.id}" /></td>
+										<td><a class="boton_personalizado_remate" href="${url}/otro/<c:out value="${otro.id}/ ${otro.subastaOtro.id }" />"> Ingresar</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

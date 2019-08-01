@@ -30,6 +30,7 @@
 									<th scope="col">Habitaciones</th>
 									<th scope="col">Localidad</th>
 									<th scope="col">Ciudad</th>
+									<th scope="col">N° de Subasta</th>
 									
 								</tr>
 							</thead>
@@ -42,7 +43,8 @@
 										<td><c:out value="${in.habitaciones}" /></td>
 										<td><c:out value="${in.localidad}" /></td>
 										<td><c:out value="${in.ciudad}" /></td>
-										<td><a class="boton_personalizado_remate" href="${url}/inmueble/<c:out value="${in.id}" />"> Ingresar</a></td>
+										<td><c:out value="${in.subastaIn.id}" /></td>
+										<td><a class="boton_personalizado_remate" href="${url}/inmueble/<c:out value="${in.id}/ ${in.subastaIn.id }" />"> Ingresar</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

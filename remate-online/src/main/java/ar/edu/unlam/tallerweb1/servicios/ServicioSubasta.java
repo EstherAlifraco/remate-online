@@ -27,5 +27,13 @@ public interface ServicioSubasta {
 	List<Subasta> consultarVehiculo(Long subastaVeId);
 
 	Subasta getId(Long id);
+	
+    Subasta modificarOferta(Double precioBase);
+	
+	Subasta getPrecioBase(Double precioBase);
+	
+	Subasta actualizarOfertar(Subasta subasta);
+	
+	Double sumarAlHacerClick(Long idSubasta, Subasta subasta);
 
 }

@@ -1,6 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import java.util.List;
+
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -25,22 +25,22 @@ import ar.edu.unlam.tallerweb1.servicios.ServicioVehiculo;
 
 @Controller
 public class ControladorABMSubasta {
-
+	
 	@Inject
 	private ServicioUsuario servicioUsuario;
-
+	
 	@Inject
 	private ServicioSubasta servicioSubasta;
-
+	
 	@Inject
 	private ServicioVehiculo servicioVehiculo;
-
+	
 	@Inject
 	private ServicioInmueble servicioInmueble;
-
+	
 	@Inject
 	private ServicioOtro servicioOtro;
-
+	
 
 	@RequestMapping("abmSubasta")
 	public ModelAndView abmSubasta(HttpServletRequest request) {
@@ -112,104 +112,109 @@ public class ControladorABMSubasta {
 	}
 
 	@RequestMapping("/agregarSubastaIn")
-	public ModelAndView agregarSubastaIn(HttpServletRequest request) {
+	public ModelAndView agregarSubastaIn(@RequestParam("idInmueble") Long idInmueble, HttpServletRequest request) {
 		Long idUsuario = (Long) request.getSession().getAttribute("idUsuario");
 		ModelMap model = new ModelMap();
 		if (idUsuario != null) {
 			if (servicioUsuario.buscarPorId(idUsuario).getRol().equals("admin")) {
 				Subasta subasta = new Subasta();
-				List<Inmueble> inmuebleList = servicioInmueble.consultarInmueble();
-
+				Inmueble inmueble = servicioInmueble.getId(idInmueble);
+				
 				model.put("subasta", subasta);
-				model.put("inmuebleList", inmuebleList);
+				model.put("inmueble", inmueble);
 
 				return new ModelAndView("administrador/agregarSubastaIn", model);
-			} else {
+				} 
+			else {
 				model.put("avisoError", "Acceso denegado");
 				model.put("mensajeError", "Para acceder usted debe tener rol ADMINISTRADOR");
-				return new ModelAndView("administrador/mensaje", model);}
-		} else {
-			return new ModelAndView("redirect:/login");
-		}
-	} 
+			return new ModelAndView("administrador/mensaje", model);}
+
+			} else {
+				return new ModelAndView("redirect:/login");
+			}
+		} 
 
 
 	@RequestMapping(path = "/guardarSubastaIn", method = RequestMethod.POST)
 	public ModelAndView guardarSubastaIn(@RequestParam("id") Long id,
-			@ModelAttribute("Subasta") Subasta subasta,
+		 @ModelAttribute("Subasta") Subasta subasta,
 			HttpServletRequest request) {
 		Long idAdmin = (Long) request.getSession().getAttribute("idUsuario");
 		ModelMap model = new ModelMap();
 		if (idAdmin != null) {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
 				subasta.setInmueble(servicioInmueble.getId(id));
-				servicioSubasta.guardarSubasta(subasta);
+					servicioSubasta.guardarSubasta(subasta);
 
-				model.put("aviso", "Creación exitosa");
-				model.put("mensaje",
-						String.format("Se ha guardado con el id %d de manera exitosa", subasta.getId()));
-
-				return new ModelAndView("administrador/mensaje", model);
-			} 
+					model.put("aviso", "Creacion Exitosa");
+					model.put("mensaje",
+							String.format("Se ha guardado con el id %d de manera exitosa", subasta.getId()));
+					
+					return new ModelAndView("administrador/mensaje", model);
+				} 
 			else {
-				model.put("avisoError", "Creacion Fallida");
-				model.put("mensajeError", String.format("No se ha podido crear la subasta"));
+					model.put("avisoError", "Creacion Fallida");
+					model.put("mensajeError", String.format("No se ah podido crear la subasta"));
+				}
+				return new ModelAndView("administrador/mensaje", model);
+			} else {
+				return new ModelAndView("redirect:/login");
 			}
-			return new ModelAndView("administrador/mensaje", model);
-		} else {
-			return new ModelAndView("redirect:/login");
-		}
-	}
 
+	}
+	
 
 	@RequestMapping("/agregarSubastaOtro")
-	public ModelAndView agregarSubastaIOtro(HttpServletRequest request) {
+	public ModelAndView agregarSubastaOtro(@RequestParam("idOtro") Long idOtro,
+			HttpServletRequest request) {
 		Long idUsuario = (Long) request.getSession().getAttribute("idUsuario");
 		ModelMap model = new ModelMap();
 		if (idUsuario != null) {
 			if (servicioUsuario.buscarPorId(idUsuario).getRol().equals("admin")) {
 				Subasta subasta = new Subasta();
-				List<Otro> otroList = servicioOtro.consultarOtro();
-
+				Otro otro = servicioOtro.getId(idOtro);
+				
 				model.put("subasta", subasta);
-				model.put("otroList", otroList);
-
+				model.put("otro", otro);
 				return new ModelAndView("administrador/agregarSubastaOtro", model);
-			} else {
+				} 
+			else {
 				model.put("avisoError", "Acceso denegado");
 				model.put("mensajeError", "Para acceder usted debe tener rol ADMINISTRADOR");
-				return new ModelAndView("administrador/mensaje", model);}
+			return new ModelAndView("administrador/mensaje", model);}
 
-		} else {
-			return new ModelAndView("redirect:/login");
-		}
-	} 
+			} else {
+				return new ModelAndView("redirect:/login");
+			}
+		} 
 
 
 	@RequestMapping(path = "/guardarSubastaOtro", method = RequestMethod.POST)
 	public ModelAndView guardarSubastaOtro(@RequestParam("id") Long id,
-			@ModelAttribute("Subasta") Subasta subasta,
+		 @ModelAttribute("Subasta") Subasta subasta,
 			HttpServletRequest request) {
 		Long idAdmin = (Long) request.getSession().getAttribute("idUsuario");
 		ModelMap model = new ModelMap();
 		if (idAdmin != null) {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
 				subasta.setOtro(servicioOtro.getId(id));
-				servicioSubasta.guardarSubasta(subasta);
+					servicioSubasta.guardarSubasta(subasta);
 
-				model.put("aviso", "Creación exitosa");
-				model.put("mensaje",
-						String.format("Se ha guardado con el id %d de manera exitosa", subasta.getId()));
-
+					model.put("aviso", "Creacion Exitosa");
+					model.put("mensaje",
+							String.format("Se ha guardado con el id %d de manera exitosa", subasta.getId()));
+					
+					return new ModelAndView("administrador/mensaje", model);
+				} 
+			else {
+					model.put("avisoError", "Creacion Fallida");
+					model.put("mensajeError", String.format("No se ah podido crear la subasta"));
+				}
 				return new ModelAndView("administrador/mensaje", model);
 			} else {
-				model.put("avisoError", "Creacion Fallida");
-				model.put("mensajeError", String.format("No se ha podido crear la subasta"));
+				return new ModelAndView("redirect:/login");
 			}
-			return new ModelAndView("administrador/mensaje", model);
-		} else {
-			return new ModelAndView("redirect:/login");
-		}
 
 	}
 
@@ -220,16 +225,23 @@ public class ControladorABMSubasta {
 		ModelMap model = new ModelMap();
 		if (idAdmin != null) {
 			if (servicioUsuario.buscarPorId(idAdmin).getRol().equals("admin")) {
+				
 				Subasta subasta = servicioSubasta.getId(idSubasta);
-				servicioSubasta.eliminarSubasta(subasta);
-				model.put("aviso", "Eliminacion Exitosa");
-			} else {
-				model.put("avisoError", "Eliminación cancelada");
-			}
+
+					servicioSubasta.eliminarSubasta(subasta);
+					
+					model.put("aviso", "Eliminacion Exitosa");
 			return new ModelAndView("administrador/mensaje", model);
-		} else {
-			return new ModelAndView("redirect:/login");
+				}
+			else {
+					model.put("avisoError", "Eliminacion Cancelada");
+
+				}return new ModelAndView("administrador/mensaje", model);
 		}
-	}
+				
+		     else {
+				return new ModelAndView("redirect:/login");
+			}
+		}
 
 }

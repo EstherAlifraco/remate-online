@@ -104,4 +104,28 @@ public class SubastaDaoImpl implements SubastaDao{
 				.add(Restrictions.eq("id",id))
 				.uniqueResult();
 	}
+
+	@Override
+	public Subasta setPrecioDao(Double precioBase) {
+		  final Session session = sessionFactory.getCurrentSession();
+		  return (Subasta) session.createCriteria(Subasta.class)
+				  .add(Restrictions.eq("precioBase",new Double(precioBase)))
+				  .setMaxResults(1).uniqueResult();
+}
+
+	@Override
+	public Subasta getPrecioDao(Double precioBase) {
+		  final Session session = sessionFactory.getCurrentSession();
+		  return (Subasta) session.createCriteria(Subasta.class)
+				  .add(Restrictions.eq("precioBase",precioBase))
+				  .setMaxResults(1).uniqueResult();
+}
+	
+	
+	@Override
+	public Subasta actualizarOfertar(Subasta subasta) {
+		final Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(subasta);
+		return subasta;
+	}
 }

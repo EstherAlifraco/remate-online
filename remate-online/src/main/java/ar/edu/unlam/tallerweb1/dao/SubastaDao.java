@@ -31,5 +31,12 @@ public interface SubastaDao {
 	
 	Subasta getIdDao(Long id);
 	
+	Subasta setPrecioDao(Double precioBase);
+	
+	Subasta getPrecioDao(Double precioBase);
+	
+	Subasta actualizarOfertar(Subasta subasta);
+
+	
 }
 

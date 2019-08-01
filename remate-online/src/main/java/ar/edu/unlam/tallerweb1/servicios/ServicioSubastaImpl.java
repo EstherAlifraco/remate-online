@@ -83,4 +83,27 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 	public Subasta getId(Long id) {
 		return servicioSubastaDao.getIdDao(id);
 	}
+	
+	@Override
+	public Subasta modificarOferta(Double precioBase) {
+		return servicioSubastaDao.setPrecioDao(precioBase);
+	}
+	
+	@Override
+	public Subasta getPrecioBase(Double precioBase) {
+		return servicioSubastaDao.getPrecioDao(precioBase);
+	}
+	
+	@Override
+	public Subasta actualizarOfertar(Subasta subasta) {
+		return servicioSubastaDao.actualizarOfertar(subasta);
+	}
+
+	@Override
+	public Double sumarAlHacerClick(Long idSubasta, Subasta subasta) {
+	    subasta = servicioSubastaDao.getIdDao(idSubasta);
+		Double precio = 0.00D;
+		precio = subasta.getPrecioBase()+ 5000;
+		return precio;
+	}
 }
