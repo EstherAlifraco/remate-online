@@ -35,16 +35,6 @@
 				</div>
 			    
 
-				<div class="form-group col-md-12">
-					<label for="otro">Otro Articulo</label> <select	 id="id" name="id" class="form-control">
-								<option value="0">Seleccione Tipo</option>
-								<c:forEach items="${otroList}" var="o">
-									<option value="${o.id}">${o.nombre} ${o.id}</option>
-								
-								</c:forEach>
-								
-							</select>
-				</div>
 
 				<input type="submit" class="btn btn-lg btn-block btn-info" style= "color:white"
 					value="Guardar Subasta">

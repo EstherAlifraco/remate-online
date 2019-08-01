@@ -35,5 +35,7 @@ public interface ServicioSubasta {
 	Subasta actualizarOfertar(Subasta subasta);
 	
 	Double sumarAlHacerClick(Long idSubasta, Subasta subasta);
+	
+	Double precioTotal(Long idSubasta, Subasta subasta);
 
 }

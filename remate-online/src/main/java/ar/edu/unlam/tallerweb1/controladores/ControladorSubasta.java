@@ -65,7 +65,7 @@ public class ControladorSubasta {
 	}
 	
 	
-	@RequestMapping(path="/botonActivo/", method=RequestMethod.GET)
+	@RequestMapping(path="/botonActivo/{idVehiculo}/{idSubasta}", method=RequestMethod.GET)
 	public ModelAndView subastar(@PathVariable Long idVehiculo, @PathVariable Long idSubasta,
 			@ModelAttribute ("subasta")Subasta subasta){
 		System.out.print("123");
@@ -88,7 +88,20 @@ public class ControladorSubasta {
 		return new ModelAndView("redirect:/subastaVehiculo/vehiculo/"+idVehiculo/+idSubasta,model);
 	}
 		else {
-			return new ModelAndView("correcta", model);
+			return new ModelAndView("/total/", model);
 		}
+	}
+	
+	@RequestMapping(path="/precioTotal//{idSubasta}")
+	public ModelAndView total(@PathVariable Long idSubasta, @ModelAttribute("subasta") Subasta subasta) {
+
+		subasta = servicioSubasta.getId(idSubasta); 
+		ModelMap model = new ModelMap();
+		
+		 servicioSubasta.precioTotal(idSubasta, subasta);
+		 
+		 model.put("subasta", subasta);
+		 
+		 return new ModelAndView("/total", model);
 	}
 }

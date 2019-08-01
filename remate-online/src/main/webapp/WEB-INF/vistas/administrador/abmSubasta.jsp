@@ -22,7 +22,7 @@
 						<thead>
 							<tr>
 								<th scope="col">Id</th>
-							<!--<th scope="col">Fecha Cierre</th>-->
+							    <th scope="col">Fecha Cierre</th>
 								<th scope="col">Precio</th>
 								<th scope="col">Descripcion</th>
 								<th scope="col">Asignado Vehiculo</th>
@@ -36,7 +36,7 @@
 								<tr>
 								
 									<td><c:out value="${s.id}" /></td>
-								<!--<td><c:out value="${s.fechaCierre}" /></td>-->
+								    <td><c:out value="${s.fechaCierre}" /></td>
 									<td><c:out value="${s.precioBase}" /></td>
 									<td><c:out value="${s.descripcion}" /></td>
 									<td><c:out value="${s.vehiculo.id}" /></td>

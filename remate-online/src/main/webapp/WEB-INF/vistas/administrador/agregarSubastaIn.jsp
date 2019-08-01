@@ -32,16 +32,6 @@
 						id="descripcion" path="descripcion" placeholder="descripcion" />
 				</div>
 				
-				<div class="form-group col-md-12">
-					<label for="inmueble">Inmueble</label> <select	 id="id" name="id" class="form-control">
-								<option value="0">Seleccione Tipo</option>
-								<c:forEach items="${inmuebleList}" var="i">
-									<option value="${i.id}">${i.calle} ${i.numero} ${i.id}</option>
-								
-								</c:forEach>
-								
-							</select>
-				</div>
 			    
 
 				<input type="submit" class="btn btn-lg btn-block btn-info" style= "color:white"

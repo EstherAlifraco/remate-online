@@ -106,4 +106,14 @@ public class ServicioSubastaImpl implements ServicioSubasta{
 		precio = subasta.getPrecioBase()+ 5000;
 		return precio;
 	}
+	
+	@Override
+	public Double precioTotal(Long idSubasta, Subasta subasta) {
+	    subasta = servicioSubastaDao.getIdDao(idSubasta);
+		Double newPrecio = subasta.getPrecioCierre().doubleValue() *
+				(100 + 12)/100;
+		subasta.setPrecioCierre(newPrecio);
+
+		return newPrecio;
+	}
 }
